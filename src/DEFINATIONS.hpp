@@ -1,6 +1,6 @@
 #pragma once
 
-#define SCREEN_WIDTH 1024
+#define SCREEN_WIDTH 1224
 #define SCREEN_HEIGHT 768
 #define SPLASH_STATE_SHOW_TIME 3.1
 
@@ -10,3 +10,4 @@
 
 #define GAME_BACKGROUND_FILE_PATH "Resources/images/gameBackground.png"
 #define PAUSE_BUTTON "Resources/res/Pause Button.png"
+#define CHARACTER_ONE_FILE_PATH "Resources/images/character.png"

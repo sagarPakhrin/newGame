@@ -14,7 +14,9 @@ namespace Sagar
 		void GameState::Init()
 		{
 				_data->assets.LoadTexture("Game Background",GAME_BACKGROUND_FILE_PATH);
+				_data->assets.LoadTexture("character",CHARACTER_ONE_FILE_PATH);
 
+				character = new Character(_data);
 		}
 
 		void GameState::HandleInput()
@@ -32,6 +34,7 @@ namespace Sagar
 
 		void GameState::Update(float dt)
 		{
+				character->Update(dt);
 		}
 
 		void GameState::Draw(float dt)
@@ -39,6 +42,7 @@ namespace Sagar
 				_data->window.clear(sf::Color(255,255,255));
 				_data->window.draw(_background);
 
+				character->Draw();
 				_data->window.display();
 		}
 }

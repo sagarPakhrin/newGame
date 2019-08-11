@@ -3,8 +3,8 @@ CFLAGS = -c -Wall
 src = src
 CC = g++
 
-TARGET: main.o StateMachine.o AssetManager.o InputManager.o Game.o SplashState.o MainMenuState.o GameState.o 
-	$(CC) StateMachine.o Game.o InputManager.o AssetManager.o SplashState.o MainMenuState.o GameState.o main.o -o main -lsfml-graphics -lsfml-window -lsfml-system
+TARGET: main.o StateMachine.o AssetManager.o InputManager.o Game.o SplashState.o MainMenuState.o GameState.o Character.o
+	$(CC) StateMachine.o Game.o InputManager.o AssetManager.o SplashState.o MainMenuState.o GameState.o Character.o main.o -o main -lsfml-graphics -lsfml-window -lsfml-system
 
 main.o: src/main.cpp $(src)/DEFINATIONS.hpp
 	$(CC) $(CFLAGS) $(src)/main.cpp
@@ -29,6 +29,9 @@ MainMenuState.o: $(src)/MainMenuState.hpp $(src)/MainMenuState.cpp $(src)/DEFINA
 
 GameState.o: $(src)/GameState.hpp $(src)/GameState.cpp $(src)/DEFINATIONS.hpp
 	$(CC) $(CFLAGS) $(src)/GameState.cpp
+
+Character.o: $(src)/Character.hpp $(src)/Character.cpp $(src)/DEFINATIONS.hpp
+	$(CC) $(CFLAGS) $(src)/Character.cpp
 
 clean:
 	rm -f *.o main
