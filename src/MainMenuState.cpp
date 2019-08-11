@@ -23,7 +23,7 @@ namespace Sagar
 				_playButton.setTexture(this->_data->assets.GetTexture("Play Button"));
 
 				_playButton.setScale(sf::Vector2f(0.8f, 0.8f));
-				_playButton.setPosition( (SCREEN_WIDTH/2) - (_playButton.getGlobalBounds().width/2 ),(SCREEN_HEIGHT/2) -(_playButton.getGlobalBounds().height/2) + 160);
+				_playButton.setPosition( (SCREEN_WIDTH/2) - (_playButton.getGlobalBounds().width),(SCREEN_HEIGHT/2) -(_playButton.getGlobalBounds().height));
 		}
 
 		void MainMenuState::HandleInput()

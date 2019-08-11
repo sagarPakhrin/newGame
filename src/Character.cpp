@@ -12,12 +12,14 @@ namespace Sagar
 		{
 				_data->window.draw(character);
 		}
-		void Character::Update(float dt)
-		{
-				position += velocity * dt;
-		}
 		void Character::SetDirection(const sf::Vector2f& dir)
 		{
 				velocity = dir * speed;
 		}
+
+		void Character::Update(float dt)
+		{
+				position += velocity * dt;
+		}
+
 }
