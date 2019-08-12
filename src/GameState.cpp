@@ -37,6 +37,8 @@ namespace Sagar
 				_data->assets.LoadTexture("attack_frame_8",ATTACK_SPRITE_8);
 				_data->assets.LoadTexture("attack_frame_9",ATTACK_SPRITE_9);
 
+				_background.setTexture(this->_data->assets.GetTexture("Game Background"));
+				_background.setScale(1,0.5);
 				character = new Character(_data);
 		}
 

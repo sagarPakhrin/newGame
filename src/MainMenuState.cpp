@@ -17,13 +17,13 @@ namespace Sagar
 				_data->assets.LoadTexture("Play Button",PLAY_BUTTON_FILEPATH);
 
 				_background.setTexture(this->_data->assets.GetTexture("Main Menu"));
-				_background.setScale(sf::Vector2f(0.8f, 0.8f));
+				_background.setScale(sf::Vector2f(0.69f, 0.69f));
 
 
 				_playButton.setTexture(this->_data->assets.GetTexture("Play Button"));
 
-				_playButton.setScale(sf::Vector2f(0.8f, 0.8f));
-				_playButton.setPosition( (SCREEN_WIDTH/2) - (_playButton.getGlobalBounds().width),(SCREEN_HEIGHT/2) -(_playButton.getGlobalBounds().height));
+				_playButton.setScale(sf::Vector2f(0.2f, 0.2f));
+				_playButton.setPosition(SCREEN_WIDTH/2 - _playButton.getGlobalBounds().width/2,SCREEN_HEIGHT*3/4);
 		}
 
 		void MainMenuState::HandleInput()
