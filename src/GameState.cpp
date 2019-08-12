@@ -25,6 +25,18 @@ namespace Sagar
 				_data->assets.LoadTexture("idle_frame_8",IDLE_SPRITE_8);
 				_data->assets.LoadTexture("idle_frame_9",IDLE_SPRITE_9);
 
+
+				_data->assets.LoadTexture("attack_frame_0",ATTACK_SPRITE_0);
+				_data->assets.LoadTexture("attack_frame_1",ATTACK_SPRITE_1);
+				_data->assets.LoadTexture("attack_frame_2",ATTACK_SPRITE_2);
+				_data->assets.LoadTexture("attack_frame_3",ATTACK_SPRITE_3);
+				_data->assets.LoadTexture("attack_frame_4",ATTACK_SPRITE_4);
+				_data->assets.LoadTexture("attack_frame_5",ATTACK_SPRITE_5);
+				_data->assets.LoadTexture("attack_frame_6",ATTACK_SPRITE_6);
+				_data->assets.LoadTexture("attack_frame_7",ATTACK_SPRITE_7);
+				_data->assets.LoadTexture("attack_frame_8",ATTACK_SPRITE_8);
+				_data->assets.LoadTexture("attack_frame_9",ATTACK_SPRITE_9);
+
 				character = new Character(_data);
 		}
 
@@ -40,11 +52,9 @@ namespace Sagar
 				}
 		}
 
-
 		void GameState::Update(float dt)
 		{
 				character->Animate(dt);
-				character->Update(dt);
 		}
 
 		void GameState::Draw(float dt)

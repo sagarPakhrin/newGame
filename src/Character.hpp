@@ -15,12 +15,14 @@ namespace Sagar
 						void Draw();
 						void Update(float dt);
 						void Animate(float dt);
+						void Attack(float dt);
 						void SetDirection(const sf::Vector2f& dir);
 				private:
 						GameDataRef _data;
 						sf::Sprite character_sprite;
 
 						std::vector<sf::Texture> _idle_animation_frames;
+						std::vector<sf::Texture> _attack_animation_frames;
 						unsigned int _animationIterator;
 
 						static constexpr float speed = 10.0f;
