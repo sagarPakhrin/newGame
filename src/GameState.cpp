@@ -14,7 +14,16 @@ namespace Sagar
 		void GameState::Init()
 		{
 				_data->assets.LoadTexture("Game Background",GAME_BACKGROUND_FILE_PATH);
-				_data->assets.LoadTexture("character",CHARACTER_ONE_FILE_PATH);
+				_data->assets.LoadTexture("idle_frame_0",IDLE_SPRITE_0);
+				_data->assets.LoadTexture("idle_frame_1",IDLE_SPRITE_1);
+				_data->assets.LoadTexture("idle_frame_2",IDLE_SPRITE_2);
+				_data->assets.LoadTexture("idle_frame_3",IDLE_SPRITE_3);
+				_data->assets.LoadTexture("idle_frame_4",IDLE_SPRITE_4);
+				_data->assets.LoadTexture("idle_frame_5",IDLE_SPRITE_5);
+				_data->assets.LoadTexture("idle_frame_6",IDLE_SPRITE_6);
+				_data->assets.LoadTexture("idle_frame_7",IDLE_SPRITE_7);
+				_data->assets.LoadTexture("idle_frame_8",IDLE_SPRITE_8);
+				_data->assets.LoadTexture("idle_frame_9",IDLE_SPRITE_9);
 
 				character = new Character(_data);
 		}
@@ -34,6 +43,7 @@ namespace Sagar
 
 		void GameState::Update(float dt)
 		{
+				character->Animate(dt);
 				character->Update(dt);
 		}
 
