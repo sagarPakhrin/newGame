@@ -38,4 +38,6 @@
 
 
 #define GAME_MUSIC "Resources/audio/mainMusic.wav"
+#define SWORD_SLASH "Resources/audio/sword_slash.wav"
+
 #define ATTACK_DURATION 2.0f

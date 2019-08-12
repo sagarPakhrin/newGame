@@ -58,7 +58,6 @@ namespace Sagar
 				velocity = dir * speed;
 		}
 
-
 		void Character::Animate(float dt)
 		{
 				if(_clock.getElapsedTime().asSeconds() > CHARACTER_ANIMATION_DURATION/_idle_animation_frames.size())
@@ -97,6 +96,14 @@ namespace Sagar
 		{
 				/* to update the character state */ 
 				this->_character_state=character_state;
+		}
+
+		void Character::playAudio()
+		{
+				if(sword_slash.openFromFile(SWORD_SLASH))
+				{
+						sword_slash.play();
+				}
 		}
 
 }

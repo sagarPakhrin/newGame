@@ -18,6 +18,7 @@ namespace Sagar
 						void Attack(float dt);
 						void SetDirection(const sf::Vector2f& dir);
 						void setCharacterState(int character_state);
+						void playAudio();
 				private:
 						GameDataRef _data;
 						sf::Sprite character_sprite;
@@ -27,8 +28,10 @@ namespace Sagar
 						unsigned int _animationIterator;
 						unsigned int _character_state = 0;
 
-						static constexpr float speed = 10.0f;
 
+						sf::Music sword_slash;
+
+						static constexpr float speed = 10.0f;
 						sf::Vector2f position;
 						sf::Vector2f velocity = {0.0f,0.0f};
 						sf::Clock _clock;

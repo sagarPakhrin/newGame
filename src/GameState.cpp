@@ -65,6 +65,7 @@ namespace Sagar
 		{
 				if(sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 				{
+						character->playAudio();
 						character->setCharacterState(1);
 				}
 				character->Update(dt);
