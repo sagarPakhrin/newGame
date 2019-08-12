@@ -14,21 +14,27 @@ namespace Sagar
 						Character(GameDataRef data); 
 						void Draw();
 						void Update(float dt);
-						void Animate(float dt);
-						void Attack(float dt);
 						void Run(float dt);
 						void SetDirection(const sf::Vector2f& dir);
 						void setCharacterState(int character_state);
 						void playAudio();
+
+						void Animate(float dt);
+						void Attack(float dt);
+						void Jump(float dt);
+
 				private:
 						GameDataRef _data;
 						sf::Sprite character_sprite;
 
+						unsigned int _animationIterator;
+						unsigned int _character_state = 0;
+
 						std::vector<sf::Texture> _idle_animation_frames;
 						std::vector<sf::Texture> _attack_animation_frames;
 						std::vector<sf::Texture> _run_animation_frames;
-						unsigned int _animationIterator;
-						unsigned int _character_state = 0;
+						std::vector<sf::Texture> _jump_animation_frames;
+
 
 
 						sf::Music sword_slash;

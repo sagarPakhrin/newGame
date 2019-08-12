@@ -36,7 +36,6 @@
 #define ATTACK_SPRITE_8 "Resources/images/ninjagirlnew/Attack__008.png"
 #define ATTACK_SPRITE_9 "Resources/images/ninjagirlnew/Attack__009.png"
 
-
 #define RUN_SPRITE_0 "Resources/images/ninjagirlnew/Run__000.png"
 #define RUN_SPRITE_1 "Resources/images/ninjagirlnew/Run__001.png"
 #define RUN_SPRITE_2 "Resources/images/ninjagirlnew/Run__002.png"
@@ -47,6 +46,17 @@
 #define RUN_SPRITE_7 "Resources/images/ninjagirlnew/Run__007.png"
 #define RUN_SPRITE_8 "Resources/images/ninjagirlnew/Run__008.png"
 #define RUN_SPRITE_9 "Resources/images/ninjagirlnew/Run__009.png"
+
+#define JUMP_SPRITE_0 "Resources/images/ninjagirlnew/Jump__000.png"
+#define JUMP_SPRITE_1 "Resources/images/ninjagirlnew/Jump__001.png"
+#define JUMP_SPRITE_2 "Resources/images/ninjagirlnew/Jump__002.png"
+#define JUMP_SPRITE_3 "Resources/images/ninjagirlnew/Jump__003.png"
+#define JUMP_SPRITE_4 "Resources/images/ninjagirlnew/Jump__004.png"
+#define JUMP_SPRITE_5 "Resources/images/ninjagirlnew/Jump__005.png"
+#define JUMP_SPRITE_6 "Resources/images/ninjagirlnew/Jump__006.png"
+#define JUMP_SPRITE_7 "Resources/images/ninjagirlnew/Jump__007.png"
+#define JUMP_SPRITE_8 "Resources/images/ninjagirlnew/Jump__008.png"
+#define JUMP_SPRITE_9 "Resources/images/ninjagirlnew/Jump__009.png"
 
 
 #define GAME_MUSIC "Resources/audio/mainMusic.wav"

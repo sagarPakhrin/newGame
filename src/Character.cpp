@@ -39,6 +39,17 @@ namespace Sagar
 				_run_animation_frames.push_back(_data->assets.GetTexture("run_frame_8"));
 				_run_animation_frames.push_back(_data->assets.GetTexture("run_frame_9"));
 
+				_jump_animation_frames.push_back(_data->assets.GetTexture("jump_frame_0"));
+				_jump_animation_frames.push_back(_data->assets.GetTexture("jump_frame_1"));
+				_jump_animation_frames.push_back(_data->assets.GetTexture("jump_frame_2"));
+				_jump_animation_frames.push_back(_data->assets.GetTexture("jump_frame_3"));
+				_jump_animation_frames.push_back(_data->assets.GetTexture("jump_frame_4"));
+				_jump_animation_frames.push_back(_data->assets.GetTexture("jump_frame_5"));
+				_jump_animation_frames.push_back(_data->assets.GetTexture("jump_frame_6"));
+				_jump_animation_frames.push_back(_data->assets.GetTexture("jump_frame_7"));
+				_jump_animation_frames.push_back(_data->assets.GetTexture("jump_frame_8"));
+				_jump_animation_frames.push_back(_data->assets.GetTexture("jump_frame_9"));
+
 				character_sprite.setTexture(_attack_animation_frames.at(_animationIterator));
 				character_sprite.setPosition(SCREEN_WIDTH/6,SCREEN_HEIGHT - (character_sprite.getGlobalBounds().height +10));
 		}
@@ -61,6 +72,10 @@ namespace Sagar
 				else if(_character_state==2)
 				{
 						Character::Run(dt);
+				}
+				else if(_character_state==3)
+				{
+						Character::Jump(dt);
 				}
 				else if (_character_state == 0)
 				{
@@ -103,6 +118,23 @@ namespace Sagar
 								_character_state = 0;
 						}
 						character_sprite.setTexture(_attack_animation_frames.at(_animationIterator));
+						_clock.restart();
+				}
+		}
+
+		void Character::Jump(float dt)
+		{
+				if(_clock.getElapsedTime().asSeconds() > ATTACK_DURATION/_attack_animation_frames.size())
+				{
+						if(_animationIterator < _jump_animation_frames.size() - 1)
+						{
+								_animationIterator ++;
+						}
+						else
+						{
+								_character_state = 0;
+						}
+						character_sprite.setTexture(_jump_animation_frames.at(_animationIterator));
 						_clock.restart();
 				}
 		}

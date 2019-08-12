@@ -50,6 +50,18 @@ namespace Sagar
 				_data->assets.LoadTexture("run_frame_9", RUN_SPRITE_9);
 
 
+				_data->assets.LoadTexture("jump_frame_0", JUMP_SPRITE_0);
+				_data->assets.LoadTexture("jump_frame_1", JUMP_SPRITE_1);
+				_data->assets.LoadTexture("jump_frame_2", JUMP_SPRITE_2);
+				_data->assets.LoadTexture("jump_frame_3", JUMP_SPRITE_3);
+				_data->assets.LoadTexture("jump_frame_4", JUMP_SPRITE_4);
+				_data->assets.LoadTexture("jump_frame_5", JUMP_SPRITE_5);
+				_data->assets.LoadTexture("jump_frame_6", JUMP_SPRITE_6);
+				_data->assets.LoadTexture("jump_frame_7", JUMP_SPRITE_7);
+				_data->assets.LoadTexture("jump_frame_8", JUMP_SPRITE_8);
+				_data->assets.LoadTexture("jump_frame_9", JUMP_SPRITE_9);
+
+
 				if(_music.openFromFile(GAME_MUSIC))
 				{
 						_music.play();
@@ -83,6 +95,10 @@ namespace Sagar
 				if(sf::Keyboard::isKeyPressed(sf::Keyboard::R))
 				{
 						character->setCharacterState(2);
+				}
+				if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+				{
+						character->setCharacterState(3);
 				}
 
 
