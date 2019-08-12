@@ -37,7 +37,19 @@
 #define ATTACK_SPRITE_9 "Resources/images/ninjagirlnew/Attack__009.png"
 
 
+#define RUN_SPRITE_0 "Resources/images/ninjagirlnew/Run__000.png"
+#define RUN_SPRITE_1 "Resources/images/ninjagirlnew/Run__001.png"
+#define RUN_SPRITE_2 "Resources/images/ninjagirlnew/Run__002.png"
+#define RUN_SPRITE_3 "Resources/images/ninjagirlnew/Run__003.png"
+#define RUN_SPRITE_4 "Resources/images/ninjagirlnew/Run__004.png"
+#define RUN_SPRITE_5 "Resources/images/ninjagirlnew/Run__005.png"
+#define RUN_SPRITE_6 "Resources/images/ninjagirlnew/Run__006.png"
+#define RUN_SPRITE_7 "Resources/images/ninjagirlnew/Run__007.png"
+#define RUN_SPRITE_8 "Resources/images/ninjagirlnew/Run__008.png"
+#define RUN_SPRITE_9 "Resources/images/ninjagirlnew/Run__009.png"
+
+
 #define GAME_MUSIC "Resources/audio/mainMusic.wav"
 #define SWORD_SLASH "Resources/audio/sword_slash.wav"
 
-#define ATTACK_DURATION 2.0f
+#define ATTACK_DURATION 1.0f

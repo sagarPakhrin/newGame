@@ -38,6 +38,18 @@ namespace Sagar
 				_data->assets.LoadTexture("attack_frame_9",ATTACK_SPRITE_9);
 
 
+				_data->assets.LoadTexture("run_frame_0", RUN_SPRITE_0);
+				_data->assets.LoadTexture("run_frame_1", RUN_SPRITE_1);
+				_data->assets.LoadTexture("run_frame_2", RUN_SPRITE_2);
+				_data->assets.LoadTexture("run_frame_3", RUN_SPRITE_3);
+				_data->assets.LoadTexture("run_frame_4", RUN_SPRITE_4);
+				_data->assets.LoadTexture("run_frame_5", RUN_SPRITE_5);
+				_data->assets.LoadTexture("run_frame_6", RUN_SPRITE_6);
+				_data->assets.LoadTexture("run_frame_7", RUN_SPRITE_7);
+				_data->assets.LoadTexture("run_frame_8", RUN_SPRITE_8);
+				_data->assets.LoadTexture("run_frame_9", RUN_SPRITE_9);
+
+
 				if(_music.openFromFile(GAME_MUSIC))
 				{
 						_music.play();
@@ -68,6 +80,12 @@ namespace Sagar
 						character->playAudio();
 						character->setCharacterState(1);
 				}
+				if(sf::Keyboard::isKeyPressed(sf::Keyboard::R))
+				{
+						character->setCharacterState(2);
+				}
+
+
 				character->Update(dt);
 		}
 

@@ -28,7 +28,18 @@ namespace Sagar
 				_attack_animation_frames.push_back(_data->assets.GetTexture("attack_frame_8"));
 				_attack_animation_frames.push_back(_data->assets.GetTexture("attack_frame_9"));
 
-				character_sprite.setTexture(_idle_animation_frames.at(_animationIterator));
+				_run_animation_frames.push_back(_data->assets.GetTexture("run_frame_0"));
+				_run_animation_frames.push_back(_data->assets.GetTexture("run_frame_1"));
+				_run_animation_frames.push_back(_data->assets.GetTexture("run_frame_2"));
+				_run_animation_frames.push_back(_data->assets.GetTexture("run_frame_3"));
+				_run_animation_frames.push_back(_data->assets.GetTexture("run_frame_4"));
+				_run_animation_frames.push_back(_data->assets.GetTexture("run_frame_5"));
+				_run_animation_frames.push_back(_data->assets.GetTexture("run_frame_6"));
+				_run_animation_frames.push_back(_data->assets.GetTexture("run_frame_7"));
+				_run_animation_frames.push_back(_data->assets.GetTexture("run_frame_8"));
+				_run_animation_frames.push_back(_data->assets.GetTexture("run_frame_9"));
+
+				character_sprite.setTexture(_attack_animation_frames.at(_animationIterator));
 				character_sprite.setPosition(SCREEN_WIDTH/6,SCREEN_HEIGHT - (character_sprite.getGlobalBounds().height +10));
 		}
 
@@ -46,6 +57,10 @@ namespace Sagar
 				if(_character_state==1)
 				{
 						Character::Attack(dt);
+				}
+				else if(_character_state==2)
+				{
+						Character::Run(dt);
 				}
 				else if (_character_state == 0)
 				{
@@ -88,6 +103,31 @@ namespace Sagar
 								_character_state = 0;
 						}
 						character_sprite.setTexture(_attack_animation_frames.at(_animationIterator));
+						_clock.restart();
+				}
+		}
+
+		void Character::Run(float dt)
+		{
+				if(_clock.getElapsedTime().asSeconds() > ATTACK_DURATION/_attack_animation_frames.size())
+				{
+						if(_animationIterator < _run_animation_frames.size() - 1)
+						{
+								_animationIterator ++;
+						}
+						else
+						{
+								_animationIterator=0;
+						}
+						if(sf::Keyboard::isKeyPressed(sf::Keyboard::R))
+						{
+								_character_state=2;
+						}
+						else
+						{
+								_character_state = 0;
+						}
+						character_sprite.setTexture(_run_animation_frames.at(_animationIterator));
 						_clock.restart();
 				}
 		}
