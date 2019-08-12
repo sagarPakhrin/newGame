@@ -92,7 +92,7 @@ namespace Sagar
 						character->playAudio();
 						character->setCharacterState(1);
 				}
-				if(sf::Keyboard::isKeyPressed(sf::Keyboard::R))
+				if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 				{
 						character->setCharacterState(2);
 				}
