@@ -63,3 +63,4 @@
 #define SWORD_SLASH "Resources/audio/sword_slash.wav"
 
 #define ATTACK_DURATION 1.0f
+#define GRAVITY 9.8f

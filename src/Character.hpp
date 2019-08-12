@@ -35,8 +35,6 @@ namespace Sagar
 						std::vector<sf::Texture> _run_animation_frames;
 						std::vector<sf::Texture> _jump_animation_frames;
 
-
-
 						sf::Music sword_slash;
 
 						static constexpr float speed = 10.0f;

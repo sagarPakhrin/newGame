@@ -51,7 +51,6 @@ namespace Sagar
 				_jump_animation_frames.push_back(_data->assets.GetTexture("jump_frame_9"));
 
 				character_sprite.setTexture(_attack_animation_frames.at(_animationIterator));
-				character_sprite.setPosition(SCREEN_WIDTH/6,SCREEN_HEIGHT - (character_sprite.getGlobalBounds().height +10));
 				character_sprite.setScale(0.3,0.3);
 		}
 
@@ -82,6 +81,9 @@ namespace Sagar
 				{
 						Character::Animate(dt);
 				}
+
+				position = velocity * dt;
+				character_sprite.setPosition(position);
 		}
 
 		void Character::SetDirection(const sf::Vector2f& dir)
@@ -135,6 +137,8 @@ namespace Sagar
 						{
 								_character_state = 0;
 						}
+
+
 						character_sprite.setTexture(_jump_animation_frames.at(_animationIterator));
 						_clock.restart();
 				}
