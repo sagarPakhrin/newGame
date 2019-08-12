@@ -6,6 +6,7 @@ namespace Sagar
 		Character::Character(GameDataRef data) : _data(data)
 		{
 				character.setTexture(_data->assets.GetTexture("character"));
+				character.setPosition(0,_data->window.getSize().y/3);
 		}
 
 		void Character::Draw()
