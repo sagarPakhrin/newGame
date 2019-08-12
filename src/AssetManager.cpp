@@ -30,4 +30,19 @@ namespace Sagar
 		{
 				return this->_fonts.at(name);
 		}
+
+		void AssetManager::LoadMusic(std::string name, std::string fileName)
+		{
+				sf::Music music;
+				if(music.openFromFile(fileName))
+				{
+						this->_music[name]= music;
+				}
+		}
+
+		sf::Music &AssetManager::GetMusic(std::string name)
+		{
+				return this->_music.at(name);
+		}
+
 }

@@ -20,6 +20,8 @@ namespace Sagar
 						sf::Clock _clock;
 						sf::Sprite _background;
 
+						sf::Music _music;
+
 						Character *character;
 		};
 }

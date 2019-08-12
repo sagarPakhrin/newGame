@@ -8,7 +8,7 @@
 #define PLAY_BUTTON_FILEPATH "Resources/images/playButton.png"
 #define MAIN_MENU_BACKGROUND_FILEPATH "Resources/images/mainMenu.jpg"
 
-#define GAME_BACKGROUND_FILE_PATH "Resources/images/testBackground.jpg"
+#define GAME_BACKGROUND_FILE_PATH "Resources/images/BG.png"
 #define PAUSE_BUTTON "Resources/res/Pause Button.png"
 #define CHARACTER_ONE_FILE_PATH "Resources/images/character.png"
 
@@ -36,4 +36,6 @@
 #define ATTACK_SPRITE_8 "Resources/images/ninjagirlnew/Attack__008.png"
 #define ATTACK_SPRITE_9 "Resources/images/ninjagirlnew/Attack__009.png"
 
+
+#define GAME_MUSIC "../Resources/audio/mainMusic.mp3"
 #define ATTACK_DURATION 2.0f

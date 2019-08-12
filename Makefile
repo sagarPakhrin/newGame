@@ -3,8 +3,10 @@ CFLAGS = -c -Wall
 src = src
 CC = g++
 
+LIBS = -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
+
 TARGET: main.o StateMachine.o AssetManager.o InputManager.o Game.o SplashState.o MainMenuState.o GameState.o Character.o
-	$(CC) StateMachine.o Game.o InputManager.o AssetManager.o SplashState.o MainMenuState.o GameState.o Character.o main.o -o main -lsfml-graphics -lsfml-window -lsfml-system
+	$(CC) StateMachine.o Game.o InputManager.o AssetManager.o SplashState.o MainMenuState.o GameState.o Character.o main.o -o main $(LIBS)
 
 main.o: src/main.cpp $(src)/DEFINATIONS.hpp
 	$(CC) $(CFLAGS) $(src)/main.cpp
