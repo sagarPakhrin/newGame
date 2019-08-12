@@ -37,5 +37,5 @@
 #define ATTACK_SPRITE_9 "Resources/images/ninjagirlnew/Attack__009.png"
 
 
-#define GAME_MUSIC "../Resources/audio/mainMusic.mp3"
+#define GAME_MUSIC "Resources/audio/mainMusic.wav"
 #define ATTACK_DURATION 2.0f

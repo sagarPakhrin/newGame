@@ -37,7 +37,12 @@ namespace Sagar
 				_data->assets.LoadTexture("attack_frame_8",ATTACK_SPRITE_8);
 				_data->assets.LoadTexture("attack_frame_9",ATTACK_SPRITE_9);
 
-				_data->assets.LoadTexture("gameMusic",GAME_MUSIC);
+
+				if(_music.openFromFile(GAME_MUSIC))
+				{
+						_music.play();
+				}
+
 
 				_background.setTexture(this->_data->assets.GetTexture("Game Background"));
 				_background.setScale(0.7,0.7);

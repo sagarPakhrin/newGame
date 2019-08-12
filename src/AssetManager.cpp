@@ -36,13 +36,13 @@ namespace Sagar
 				sf::Music music;
 				if(music.openFromFile(fileName))
 				{
-						this->_music[name]= music;
+						/* this->_musics[name]= music; */
 				}
 		}
 
 		sf::Music &AssetManager::GetMusic(std::string name)
 		{
-				return this->_music.at(name);
+				return this->_musics.at(name);
 		}
 
 }

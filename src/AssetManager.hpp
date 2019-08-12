@@ -24,6 +24,6 @@ namespace Sagar
 				private:
 						std::map<std::string, sf::Texture> _textures;
 						std::map<std::string, sf::Font> _fonts;
-						std::map<std::string, sf::Music> _music;
+						std::map<std::string, sf::Music> _musics;
 		};
 }
