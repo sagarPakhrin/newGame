@@ -52,6 +52,7 @@ namespace Sagar
 
 				character_sprite.setTexture(_attack_animation_frames.at(_animationIterator));
 				character_sprite.setPosition(SCREEN_WIDTH/6,SCREEN_HEIGHT - (character_sprite.getGlobalBounds().height +10));
+				character_sprite.setScale(0.3,0.3);
 		}
 
 		void Character::Draw()
