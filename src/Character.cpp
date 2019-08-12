@@ -29,22 +29,33 @@ namespace Sagar
 				_attack_animation_frames.push_back(_data->assets.GetTexture("attack_frame_9"));
 
 				character_sprite.setTexture(_idle_animation_frames.at(_animationIterator));
-				character_sprite.setScale(0.4f,0.4f);
-				character_sprite.setPosition(100,SCREEN_HEIGHT - (character_sprite.getGlobalBounds().height +10));
+				character_sprite.setPosition(SCREEN_WIDTH/6,SCREEN_HEIGHT - (character_sprite.getGlobalBounds().height +10));
 		}
 
 		void Character::Draw()
 		{
 				_data->window.draw(character_sprite);
 		}
-		void Character::SetDirection(const sf::Vector2f& dir)
-		{
-				velocity = dir * speed;
-		}
+
+		/************************************
+		 *************UPDATE METHOD ********
+		 ************************************/
 
 		void Character::Update(float dt)
 		{
-				position += velocity * dt;
+				if(_character_state==1)
+				{
+						Character::Attack(dt);
+				}
+				else if (_character_state == 0)
+				{
+						Character::Animate(dt);
+				}
+		}
+
+		void Character::SetDirection(const sf::Vector2f& dir)
+		{
+				velocity = dir * speed;
 		}
 
 
@@ -75,11 +86,17 @@ namespace Sagar
 						}
 						else
 						{
-								_animationIterator = 0;
+								_character_state = 0;
 						}
 						character_sprite.setTexture(_attack_animation_frames.at(_animationIterator));
 						_clock.restart();
 				}
+		}
+
+		void Character::setCharacterState(const int character_state)
+		{
+				/* to update the character state */ 
+				this->_character_state=character_state;
 		}
 
 }

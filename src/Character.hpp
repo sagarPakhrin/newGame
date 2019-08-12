@@ -17,6 +17,7 @@ namespace Sagar
 						void Animate(float dt);
 						void Attack(float dt);
 						void SetDirection(const sf::Vector2f& dir);
+						void setCharacterState(int character_state);
 				private:
 						GameDataRef _data;
 						sf::Sprite character_sprite;
@@ -24,6 +25,7 @@ namespace Sagar
 						std::vector<sf::Texture> _idle_animation_frames;
 						std::vector<sf::Texture> _attack_animation_frames;
 						unsigned int _animationIterator;
+						unsigned int _character_state = 0;
 
 						static constexpr float speed = 10.0f;
 

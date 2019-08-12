@@ -17,7 +17,7 @@ namespace Sagar
 				_data->assets.LoadTexture("Play Button",PLAY_BUTTON_FILEPATH);
 
 				_background.setTexture(this->_data->assets.GetTexture("Main Menu"));
-				_background.setScale(sf::Vector2f(0.85f, 0.95f));
+				_background.setScale(sf::Vector2f(0.8f, 0.8f));
 
 
 				_playButton.setTexture(this->_data->assets.GetTexture("Play Button"));

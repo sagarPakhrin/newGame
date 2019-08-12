@@ -54,7 +54,11 @@ namespace Sagar
 
 		void GameState::Update(float dt)
 		{
-				character->Animate(dt);
+				if(sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+				{
+						character->setCharacterState(1);
+				}
+				character->Update(dt);
 		}
 
 		void GameState::Draw(float dt)
