@@ -40,8 +40,10 @@ namespace Sagar
 						sf::Vector2f speed = {30.0f,30.0f};
 						sf::Vector2f direction = {1.0f,1.0f};
 						sf::Vector2f position;
-						sf::Vector2f velocity = {0.0f,0.0f};
-						unsigned float mass = 50.f;
+						sf::Vector2f velocity = {0.0f,100.0f};
+						/* unsigned float mass = 50.f; */
+						float gravity = -0.98f;
+						float jumpHeight = 100.0f;
 						sf::Clock _clock;
 		};
 }

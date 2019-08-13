@@ -125,7 +125,20 @@ namespace Sagar
 				if(_clock.getElapsedTime().asSeconds() > ATTACK_DURATION/_attack_animation_frames.size())
 				{
 						/* sf::Vector2f dir = {direction.x,direction.y}; */
-						character_sprite.move(0,-100);
+						if(velocity.y<=0)
+						{
+								velocity.y = -velocity.y;
+						}
+						else if(velocity.y >100.0)
+						{
+								velocity.y = 0.f;
+						}
+						velocity.y =  velocity.y + velocity.y * gravity;
+
+						character_sprite.move(0,-velocity.y);
+
+						/* character_sprite.move(0,gravity * velocity.x); */
+
 						if(_animationIterator < _jump_animation_frames.size() - 1)
 						{
 								_animationIterator ++;
