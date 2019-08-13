@@ -95,6 +95,14 @@ namespace Sagar
 				}
 				if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 				{
+						sf::Vector2f dir = {1.0f,1.0f};
+						character->setDirection(dir);
+						character->setCharacterState(2);
+				}
+				if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+				{
+						sf::Vector2f dir = {-1.0f,1.0f};
+						character->setDirection(dir);
 						character->setCharacterState(2);
 				}
 				if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space))

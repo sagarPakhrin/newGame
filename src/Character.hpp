@@ -15,14 +15,13 @@ namespace Sagar
 						void Draw();
 						void Update(float dt);
 						void Run(float dt);
-						void SetDirection(const sf::Vector2f& dir);
+						void setDirection(const sf::Vector2f& dir);
 						void setCharacterState(int character_state);
 						void playAudio();
 
 						void Animate(float dt);
 						void Attack(float dt);
 						void Jump(float dt);
-
 				private:
 						GameDataRef _data;
 						sf::Sprite character_sprite;
@@ -39,6 +38,7 @@ namespace Sagar
 
 						/* static constexpr float speed = 2.0f; */
 						sf::Vector2f speed = {30.0f,30.0f};
+						sf::Vector2f direction = {1.0f,1.0f};
 						sf::Vector2f position;
 						sf::Vector2f velocity = {0.0f,0.0f};
 						sf::Clock _clock;

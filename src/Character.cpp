@@ -51,7 +51,7 @@ namespace Sagar
 				_jump_animation_frames.push_back(_data->assets.GetTexture("jump_frame_9"));
 
 				character_sprite.setTexture(_attack_animation_frames.at(_animationIterator));
-				character_sprite.setPosition(100,SCREEN_HEIGHT - character_sprite.getGlobalBounds().height);
+				character_sprite.setPosition(100,SCREEN_HEIGHT - character_sprite.getGlobalBounds().height/4);
 				character_sprite.setScale(0.3,0.3);
 		}
 
@@ -85,10 +85,6 @@ namespace Sagar
 
 		}
 
-		/* void Character::SetDirection(const sf::Vector2f& dir) */
-		/* { */
-		/* 		velocity = dir * speed; */
-		/* } */
 
 		void Character::Animate(float dt)
 		{
@@ -148,12 +144,20 @@ namespace Sagar
 				if(_clock.getElapsedTime().asSeconds() > ATTACK_DURATION/_attack_animation_frames.size())
 				{
 						sf::Vector2f pos = character_sprite.getPosition();
-						character_sprite.move(speed.x,0);
-						if(pos.x >=(SCREEN_WIDTH - character_sprite.getGlobalBounds().width/2 - 100))
+
+						/******************** Setting Character Boundry *********************/
+						if(pos.x >(SCREEN_WIDTH - character_sprite.getGlobalBounds().width/2 -50))
 						{
-								character_sprite.setPosition(SCREEN_WIDTH-character_sprite.getGlobalBounds().width/2,pos.y);
+								character_sprite.setPosition(SCREEN_WIDTH-character_sprite.getGlobalBounds().width/2-50,pos.y);
+						}
+						else if(pos.x <50)
+						{
+								character_sprite.setPosition(50,pos.y);
 						}
 
+						character_sprite.move(speed.x*direction.x,0);
+
+						/* Set Animation */
 						if(_animationIterator < _run_animation_frames.size() - 1)
 						{
 								_animationIterator ++;
@@ -179,6 +183,11 @@ namespace Sagar
 		{
 				/* to update the character state */ 
 				this->_character_state=character_state;
+		}
+
+		void Character::setDirection(const sf::Vector2f& dir)
+		{
+				direction = dir;
 		}
 
 		void Character::playAudio()
