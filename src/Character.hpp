@@ -37,7 +37,8 @@ namespace Sagar
 
 						sf::Music sword_slash;
 
-						static constexpr float speed = 10.0f;
+						/* static constexpr float speed = 2.0f; */
+						sf::Vector2f speed = {30.0f,30.0f};
 						sf::Vector2f position;
 						sf::Vector2f velocity = {0.0f,0.0f};
 						sf::Clock _clock;

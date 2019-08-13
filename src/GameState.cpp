@@ -80,6 +80,7 @@ namespace Sagar
 				{
 						if(sf::Event::Closed == event.type)
 						{
+								_music.stop();
 								_data->window.close();
 						}
 				}
