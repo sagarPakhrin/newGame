@@ -91,25 +91,26 @@ namespace Sagar
 				if(sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 				{
 						character->playAudio();
-						character->setCharacterState(1);
+						character->setCharacterState(ATTACK_STATE);
 				}
 				if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 				{
 						sf::Vector2f dir = {1.0f,1.0f};
 						character->setDirection(dir);
-						character->setCharacterState(2);
+						character->setCharacterState(RUNNING_STATE);
 				}
 				if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 				{
 						sf::Vector2f dir = {-1.0f,1.0f};
 						character->setDirection(dir);
-						character->setCharacterState(2);
+						character->setCharacterState(RUNNING_STATE);
 				}
 				if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
 				{
-						character->setCharacterState(3);
+						sf::Vector2f dir = {0.0f,1.0f};
+						character->setDirection(dir);
+						character->Tap();
 				}
-
 
 				character->Update(dt);
 		}

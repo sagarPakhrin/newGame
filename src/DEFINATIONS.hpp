@@ -14,6 +14,15 @@
 
 #define CHARACTER_ANIMATION_DURATION 4.0f
 
+#define IDLE_STATE  0
+#define ATTACK_STATE  1
+#define RUNNING_STATE 2
+#define JUMPING_STATE  3
+#define FALLING_STATE  4
+
+#define UP 0
+#define DOWN 1
+
 #define IDLE_SPRITE_0 "Resources/images/ninjagirlnew/Idle__000.png"
 #define IDLE_SPRITE_1 "Resources/images/ninjagirlnew/Idle__001.png"
 #define IDLE_SPRITE_2 "Resources/images/ninjagirlnew/Idle__002.png"

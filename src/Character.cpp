@@ -66,22 +66,25 @@ namespace Sagar
 
 		void Character::Update(float dt)
 		{
-				if(_character_state==1)
+				if(_character_state==ATTACK_STATE)
 				{
 						Character::Attack(dt);
 				}
-				else if(_character_state==2)
+				else if(_character_state==RUNNING_STATE)
 				{
 						Character::Run(dt);
-				}
-				else if(_character_state==3)
-				{
-						Character::Jump(dt);
 				}
 				else if (_character_state == 0)
 				{
 						Character::Animate(dt);
 				}
+
+
+				if(_character_state==JUMPING_STATE)
+				{
+						Character::Jump(dt);
+				}
+
 
 		}
 
@@ -113,7 +116,7 @@ namespace Sagar
 						}
 						else
 						{
-								_character_state = 0;
+								_character_state = IDLE_STATE;
 						}
 						character_sprite.setTexture(_attack_animation_frames.at(_animationIterator));
 						_clock.restart();
@@ -124,20 +127,31 @@ namespace Sagar
 		{
 				if(_clock.getElapsedTime().asSeconds() > ATTACK_DURATION/_attack_animation_frames.size())
 				{
-						/* sf::Vector2f dir = {direction.x,direction.y}; */
-						if(velocity.y<=0)
+						if(direction.x == UP)
 						{
-								velocity.y = -velocity.y;
+								character_sprite.move(0,-gravity*dt);
 						}
-						else if(velocity.y >100.0)
+						else if (direction.x == DOWN)
 						{
-								velocity.y = 0.f;
+								if(character_sprite.getPosition().y > SCREEN_HEIGHT - character_sprite.getGlobalBounds().height/4)
+								{
+										character_sprite.setPosition(100,SCREEN_HEIGHT - character_sprite.getGlobalBounds().height/4);
+										_jumpClock.restart();
+										direction.x = 1.0f;
+								}	
+								else
+								{
+										character_sprite.move(0,gravity*dt);
+								}
 						}
-						velocity.y =  velocity.y + velocity.y * gravity;
-
-						character_sprite.move(0,-velocity.y);
-
-						/* character_sprite.move(0,gravity * velocity.x); */
+						if(_jumpClock.getElapsedTime().asSeconds() > jump_duration)
+						{
+								_jumpClock.restart();
+								direction.x = 1.0f;
+						}
+						/*************************
+						 * ****ANIMATION*********
+						 * ************************/
 
 						if(_animationIterator < _jump_animation_frames.size() - 1)
 						{
@@ -145,12 +159,17 @@ namespace Sagar
 						}
 						else
 						{
-								_character_state = 0;
+								_character_state = IDLE_STATE;
 						}
 
 						character_sprite.setTexture(_jump_animation_frames.at(_animationIterator));
 						_clock.restart();
 				}
+		}
+		void Character::Tap()
+		{
+				_jumpClock.restart();
+				_character_state = JUMPING_STATE;
 		}
 
 		void Character::Run(float dt)
@@ -182,7 +201,7 @@ namespace Sagar
 						}
 						if(sf::Keyboard::isKeyPressed(sf::Keyboard::R))
 						{
-								_character_state=2;
+								_character_state=RUNNING_STATE;
 						}
 						else
 						{
