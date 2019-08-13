@@ -124,6 +124,8 @@ namespace Sagar
 		{
 				if(_clock.getElapsedTime().asSeconds() > ATTACK_DURATION/_attack_animation_frames.size())
 				{
+						/* sf::Vector2f dir = {direction.x,direction.y}; */
+						character_sprite.move(0,-100);
 						if(_animationIterator < _jump_animation_frames.size() - 1)
 						{
 								_animationIterator ++;
@@ -132,7 +134,6 @@ namespace Sagar
 						{
 								_character_state = 0;
 						}
-
 
 						character_sprite.setTexture(_jump_animation_frames.at(_animationIterator));
 						_clock.restart();
