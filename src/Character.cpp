@@ -51,7 +51,7 @@ namespace Sagar
 				_jump_animation_frames.push_back(_data->assets.GetTexture("jump_frame_9"));
 
 				character_sprite.setTexture(_attack_animation_frames.at(_animationIterator));
-				character_sprite.setPosition(100,SCREEN_HEIGHT - character_sprite.getGlobalBounds().height/4);
+				character_sprite.setPosition(100,_data->window.getSize().y-150);
 				character_sprite.setScale(0.3,0.3);
 		}
 
@@ -84,7 +84,13 @@ namespace Sagar
 				{
 						Character::Jump(dt);
 				}
-
+				if(character_sprite.getPosition().y > (_data->window.getSize().y - 150))
+				{
+						character_sprite.setPosition(100,_data->window.getSize().y-150);
+						direction.x = 1.0f;
+						_jumpClock.restart();
+						_character_state=IDLE_STATE;
+				}
 
 		}
 
@@ -133,16 +139,7 @@ namespace Sagar
 						}
 						else if (direction.x == DOWN)
 						{
-								if(character_sprite.getPosition().y > SCREEN_HEIGHT - character_sprite.getGlobalBounds().height/4)
-								{
-										character_sprite.setPosition(100,SCREEN_HEIGHT - character_sprite.getGlobalBounds().height/4);
-										_jumpClock.restart();
-										direction.x = 1.0f;
-								}	
-								else
-								{
-										character_sprite.move(0,gravity*dt);
-								}
+								character_sprite.move(0,gravity*dt);
 						}
 						if(_jumpClock.getElapsedTime().asSeconds() > jump_duration)
 						{
@@ -169,7 +166,10 @@ namespace Sagar
 		void Character::Tap()
 		{
 				_jumpClock.restart();
-				_character_state = JUMPING_STATE;
+				if(_character_state != JUMPING_STATE)
+				{
+						_character_state = JUMPING_STATE;
+				}
 		}
 
 		void Character::Run(float dt)
