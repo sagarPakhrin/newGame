@@ -66,31 +66,6 @@ namespace Sagar
 
 		void Character::Update(float dt)
 		{
-				if(_character_state==ATTACK_STATE)
-				{
-						Character::Attack(dt);
-				}
-				else if(_character_state==RUNNING_STATE)
-				{
-						Character::Run(dt);
-				}
-				else if (_character_state == 0)
-				{
-						Character::Animate(dt);
-				}
-
-
-				if(_character_state==JUMPING_STATE)
-				{
-						Character::Jump(dt);
-				}
-				if(character_sprite.getPosition().y > (_data->window.getSize().y - 150))
-				{
-						character_sprite.setPosition(100,_data->window.getSize().y-150);
-						direction.x = 1.0f;
-						_jumpClock.restart();
-						_character_state=IDLE_STATE;
-				}
 
 		}
 }
