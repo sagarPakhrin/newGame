@@ -191,4 +191,9 @@ namespace Sagar
 				if(sword_slash.openFromFile(SWORD_SLASH))
 						sword_slash.play();
 		}
+
+		const sf::Sprite Character::&GetSprite() const
+		{
+				return character_sprite;
+		}
 }

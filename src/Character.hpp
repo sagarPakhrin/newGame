@@ -23,7 +23,8 @@ namespace Sagar
 						void setCharacterState(int character_state);
 						void playAudio();
 
-						const Collider GetCollider()const {return Collider(character_sprite);}
+						/* const Collider &GetCollider(){return Collider(character_sprite);} */
+						const sf::Sprite &GetSprite() const;
 
 						void Animate(float dt);
 						void Attack(float dt);
