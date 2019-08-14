@@ -69,6 +69,17 @@ namespace Sagar
 
 		void Character::Update(float dt)
 		{
-				animation->Update(character_sprite,_idle_animation_frames,_clock,dt);
+				if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+				{
+						animation->Update(character_sprite,_run_animation_frames,_clock,dt);
+				}
+				else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+				{
+						animation->Update(character_sprite,_jump_animation_frames,_clock,dt);
+				}
+				else
+				{
+						animation->Update(character_sprite,_idle_animation_frames,_clock,dt);
+				}
 		}
 }

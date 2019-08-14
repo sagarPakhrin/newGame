@@ -32,7 +32,7 @@ MainMenuState.o: $(src)/MainMenuState.hpp $(src)/MainMenuState.cpp $(src)/DEFINA
 GameState.o: $(src)/GameState.hpp $(src)/GameState.cpp $(src)/DEFINATIONS.hpp
 	$(CC) $(CFLAGS) $(src)/GameState.cpp
 
-Character.o: $(src)/Character.hpp $(src)/Character.cpp $(src)/DEFINATIONS.hpp
+Character.o: $(src)/Character.hpp $(src)/Character.cpp $(src)/Animation.hpp $(src)/DEFINATIONS.hpp
 	$(CC) $(CFLAGS) $(src)/Character.cpp
 
 Animation.o: $(src)/Animation.hpp $(src)/Animation.cpp $(src)/DEFINATIONS.hpp
