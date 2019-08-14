@@ -5,6 +5,7 @@
 
 #include "Game.hpp"
 #include "Animation.hpp"
+#include "Collider.hpp"
 #include <vector>
 
 namespace Sagar
@@ -19,6 +20,8 @@ namespace Sagar
 						void setDirection(const sf::Vector2f& dir);
 						void setCharacterState(int character_state);
 						void playAudio();
+
+						Collider GetCollider(){return Collider(character_sprite);}
 
 						void Animate(float dt);
 						void Attack(float dt);
