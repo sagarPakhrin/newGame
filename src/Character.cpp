@@ -55,7 +55,7 @@ namespace Sagar
 				/* character_sprite.setPosition(100,_data->window.getSize().y-150); */
 				character_sprite.setPosition(100,_data->window.getSize().y-150);
 				character_sprite.setScale(0.3,0.3);
-				animation = new Animation();
+				animation = new Animation(0.1);
 		}
 
 		void Character::Draw()
@@ -73,9 +73,13 @@ namespace Sagar
 				{
 						animation->Update(character_sprite,_run_animation_frames,_clock,dt);
 				}
-				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
 				{
 						animation->Update(character_sprite,_jump_animation_frames,_clock,dt);
+				}
+				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+				{
+						animation->Update(character_sprite,_attack_animation_frames,_clock,dt);
 				}
 				else
 				{
