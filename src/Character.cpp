@@ -1,4 +1,5 @@
 #include "Character.hpp"
+#include <cmath>
 #include <iostream>
 #include "Animation.hpp"
 
@@ -93,17 +94,16 @@ namespace Sagar
 
 		void Character::Update(float dt)
 		{
-				sf::Vector2f movement(0.0f,0.0f);
-
+				velocity.x = 0.0f;
 				if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 				{
-						movement.x +=speed * dt;
+						velocity.x +=speed * dt;
 						current_animation = _run_animation_frames;
 						_character_state = RUNNING_STATE;
 				}
 				else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 				{
-						movement.x -=speed * dt;
+						velocity.x -=speed * dt;
 						current_animation = _run_animation_frames;
 						_character_state = RUNNING_STATE;
 				}
@@ -125,6 +125,9 @@ namespace Sagar
 				}
 				else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
 				{
+						canJump = false;
+						velocity.y = -sqrt(2.0f * 981.0f * jumpHeight);
+						// swuare root 2.0f * gravity * jumpheight;
 						current_animation = _jump_animation_frames;
 						_character_state = JUMPING_STATE;
 				}
@@ -132,6 +135,9 @@ namespace Sagar
 				{
 						_character_state = IDLE_STATE;
 				}
+
+				/* setting gravity */
+				velocity.y +=981.0f * dt;
 
 
 				if(_character_state == IDLE_STATE)
@@ -143,7 +149,7 @@ namespace Sagar
 				{
 						animation->Update(character_sprite,current_animation,false,dt);
 				}
-				character_sprite.move(movement);
+				character_sprite.move(velocity*dt);
 
 				/* check if boundry crossed */
 				if(character_sprite.getPosition().x <= (character_sprite.getTexture()->getSize().x*0.3)/2)
@@ -153,6 +159,29 @@ namespace Sagar
 				if(character_sprite.getPosition().x >= _data->window.getSize().x - (character_sprite.getTexture()->getSize().x*0.3)/2)
 				{
 						character_sprite.setPosition(_data->window.getSize().x - (character_sprite.getTexture()->getSize().x*0.3)/2,character_sprite.getPosition().y);
+				}
+		}
+
+		void Character::OnCollision(sf::Vector2f dirn)
+		{
+				if(dirn.x < 0.0f)
+				{
+						/* collosion on left */
+						velocity.x = 0.0f;
+				}
+				else if(dirn.x > 0.0f)
+				{
+						velocity.x = 0.0f;
+				}
+				if(dirn.y > 0.0f)
+				{
+						velocity.y = 0.0f;
+						canJump = true;
+				}
+				else if (dirn.y > 0.0f)
+				{
+						/* collision on the top */
+						velocity.y = 0.0f;
 				}
 		}
 

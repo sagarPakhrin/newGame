@@ -115,6 +115,11 @@ namespace Sagar
 		void GameState::Update(float dt)
 		{
 				character->Update(dt);
+
+				sf::Vector2f dirn;
+
+				/* if(ground1->GetCollider().CheckCollision(character->GetCollider(),dirn,1.0f)) */
+				/* 		character->OnCollision(dirn); */
 		}
 
 		void GameState::Draw(float dt)

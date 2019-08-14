@@ -5,6 +5,7 @@
 
 #include "Game.hpp"
 #include "Animation.hpp"
+#include "Collider.hpp"
 #include <vector>
 
 namespace Sagar
@@ -13,9 +14,13 @@ namespace Sagar
 		{
 				public:
 						Ground(GameDataRef data); 
+						~Ground(){}
 						void Draw();
 						void Update(float dt);
-						~Ground(){}
+
+						const Collider GetCollider() const {return Collider(ground);}
+
+
 				private:
 						GameDataRef _data;
 						sf::Sprite ground;

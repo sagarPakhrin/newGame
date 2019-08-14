@@ -29,7 +29,7 @@ SplashState.o: $(src)/SplashState.hpp $(src)/SplashState.cpp $(src)/DEFINATIONS.
 MainMenuState.o: $(src)/MainMenuState.hpp $(src)/MainMenuState.cpp $(src)/DEFINATIONS.hpp
 	$(CC) $(CFLAGS) $(src)/MainMenuState.cpp
 
-GameState.o: $(src)/GameState.hpp $(src)/GameState.cpp $(src)/DEFINATIONS.hpp
+GameState.o: $(src)/GameState.hpp $(src)/GameState.cpp $(src)/Collider.hpp $(src)/DEFINATIONS.hpp
 	$(CC) $(CFLAGS) $(src)/GameState.cpp
 
 Character.o: $(src)/Character.hpp $(src)/Character.cpp $(src)/Animation.hpp $(src)/DEFINATIONS.hpp

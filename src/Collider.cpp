@@ -7,7 +7,7 @@ namespace Sagar
 		{
 
 		}
-		bool Collider::CheckCollision(Collider& other, float push)
+		bool Collider::CheckCollision(Collider& other, sf::Vector2f& dirn, float push)
 		{
 				/* GetPosition is my own function */
 				sf::Vector2f otherPosition = other.GetPosition();
@@ -34,11 +34,36 @@ namespace Sagar
 								{
 										Move(intersectX * (1.0f - push),0.0f);
 										other.Move(-intersectX * push,0.0f);
+
+										dirn.x = 1.0f;
+										dirn.y = 0.0f;
+								}
+								else
+								{
+										Move(-intersectX * (1.0f - push),0.0f);
+										other.Move(intersectX * push,0.0f);
+
+										dirn.x = -1.0f;
+										dirn.y = 0.0f;
+								}
+						}
+						else
+						{
+								if(deltaX > 0.0f)
+								{
+										Move(0.0f,intersectY * (1.0f - push));
+										other.Move(0.0f,-intersectY * push);
+
+										dirn.x = 0.0f;
+										dirn.y = 1.0f;
 								}
 								else
 								{
 										Move(0.0f,-intersectY * (1.0f - push));
 										other.Move(0.0f,intersectY * push);
+
+										dirn.x = 0.0f;
+										dirn.y = -1.0f;
 								}
 						}
 

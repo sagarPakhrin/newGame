@@ -14,6 +14,8 @@ namespace Sagar
 		{
 				public:
 						Character(GameDataRef data); 
+						~Character(){}
+
 						void Draw();
 						void Update(float dt);
 						void Run(float dt);
@@ -21,13 +23,12 @@ namespace Sagar
 						void setCharacterState(int character_state);
 						void playAudio();
 
-						Collider GetCollider(){return Collider(character_sprite);}
+						const Collider GetCollider()const {return Collider(character_sprite);}
 
 						void Animate(float dt);
 						void Attack(float dt);
 						void Jump(float dt);
-						void Animate();
-						~Character(){}
+						void OnCollision(sf::Vector2f dirn);
 				private:
 						GameDataRef _data;
 						sf::Sprite character_sprite;
@@ -49,6 +50,9 @@ namespace Sagar
 						sf::Music sword_slash;
 
 						float speed = 330;
+						sf::Vector2f velocity;
+						bool canJump;
+						float jumpHeight = 200;
 
 						sf::Clock _clock;
 		};

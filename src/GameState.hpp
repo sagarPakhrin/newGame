@@ -5,6 +5,7 @@
 #include "Game.hpp"
 #include "Character.hpp"
 #include "Ground.hpp"
+#include "Collider.hpp"
 namespace Sagar
 {
 		class GameState: public State
@@ -25,5 +26,7 @@ namespace Sagar
 
 						Character *character;
 						Ground *ground1;
+						Collider collider;
+
 		};
 }
