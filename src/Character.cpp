@@ -69,21 +69,23 @@ namespace Sagar
 
 		void Character::Update(float dt)
 		{
+				sf::Vector2f movement(0.0f,0.0f);
+
 				if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 				{
-						animation->Update(character_sprite,_run_animation_frames,_clock,dt);
+						movement.x +=speed * dt;
 				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+				if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 				{
-						animation->Update(character_sprite,_jump_animation_frames,_clock,dt);
+						movement.x -=speed * dt;
 				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-				{
-						animation->Update(character_sprite,_attack_animation_frames,_clock,dt);
-				}
-				else
-				{
-						animation->Update(character_sprite,_idle_animation_frames,_clock,dt);
-				}
+
+				animation->Update(character_sprite,_idle_animation_frames,_clock,false,dt);
+				character_sprite.move(movement);
+		}
+		void Character::playAudio()
+		{
+				if(sword_slash.openFromFile(SWORD_SLASH))
+						sword_slash.play();
 		}
 }

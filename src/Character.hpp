@@ -41,15 +41,9 @@ namespace Sagar
 						sf::Music sword_slash;
 
 						/* static constexpr float speed = 2.0f; */
-						sf::Vector2f speed = {30.0f,30.0f};
-						sf::Vector2f direction = {1.0f,1.0f};
-						/* sf::Vector2f position; */
-						sf::Vector2f velocity = {0.0f,100.0f};
-						/* unsigned float mass = 50.f; */
-						float gravity = 350.0f;
-						float falling_speed = 350.0f;
-						float jump_duration = 0.25f;
-						sf::Clock _jumpClock;
+						unsigned int character_state = IDLE_STATE;
+
+						float speed = 150;
 
 						sf::Clock _clock;
 		};
