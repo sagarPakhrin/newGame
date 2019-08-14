@@ -51,27 +51,27 @@ namespace Sagar
 				_jump_animation_frames.push_back(_data->assets.GetTexture("jump_frame_8"));
 				_jump_animation_frames.push_back(_data->assets.GetTexture("jump_frame_9"));
 
-				_slide_animation_frames.push_back(_data->assets.GetTexture("jump_frame_0"));
-				_slide_animation_frames.push_back(_data->assets.GetTexture("jump_frame_1"));
-				_slide_animation_frames.push_back(_data->assets.GetTexture("jump_frame_2"));
-				_slide_animation_frames.push_back(_data->assets.GetTexture("jump_frame_3"));
-				_slide_animation_frames.push_back(_data->assets.GetTexture("jump_frame_4"));
-				_slide_animation_frames.push_back(_data->assets.GetTexture("jump_frame_5"));
-				_slide_animation_frames.push_back(_data->assets.GetTexture("jump_frame_6"));
-				_slide_animation_frames.push_back(_data->assets.GetTexture("jump_frame_7"));
-				_slide_animation_frames.push_back(_data->assets.GetTexture("jump_frame_8"));
-				_slide_animation_frames.push_back(_data->assets.GetTexture("jump_frame_9"));
+				_slide_animation_frames.push_back(_data->assets.GetTexture("slide_frame_0"));
+				_slide_animation_frames.push_back(_data->assets.GetTexture("slide_frame_1"));
+				_slide_animation_frames.push_back(_data->assets.GetTexture("slide_frame_2"));
+				_slide_animation_frames.push_back(_data->assets.GetTexture("slide_frame_3"));
+				_slide_animation_frames.push_back(_data->assets.GetTexture("slide_frame_4"));
+				_slide_animation_frames.push_back(_data->assets.GetTexture("slide_frame_5"));
+				_slide_animation_frames.push_back(_data->assets.GetTexture("slide_frame_6"));
+				_slide_animation_frames.push_back(_data->assets.GetTexture("slide_frame_7"));
+				_slide_animation_frames.push_back(_data->assets.GetTexture("slide_frame_8"));
+				_slide_animation_frames.push_back(_data->assets.GetTexture("slide_frame_9"));
 
-				_throw_animation_frames.push_back(_data->assets.GetTexture("jump_frame_0"));
-				_throw_animation_frames.push_back(_data->assets.GetTexture("jump_frame_1"));
-				_throw_animation_frames.push_back(_data->assets.GetTexture("jump_frame_2"));
-				_throw_animation_frames.push_back(_data->assets.GetTexture("jump_frame_3"));
-				_throw_animation_frames.push_back(_data->assets.GetTexture("jump_frame_4"));
-				_throw_animation_frames.push_back(_data->assets.GetTexture("jump_frame_5"));
-				_throw_animation_frames.push_back(_data->assets.GetTexture("jump_frame_6"));
-				_throw_animation_frames.push_back(_data->assets.GetTexture("jump_frame_7"));
-				_throw_animation_frames.push_back(_data->assets.GetTexture("jump_frame_8"));
-				_throw_animation_frames.push_back(_data->assets.GetTexture("jump_frame_9"));
+				_throw_animation_frames.push_back(_data->assets.GetTexture("throw_frame_0"));
+				_throw_animation_frames.push_back(_data->assets.GetTexture("throw_frame_1"));
+				_throw_animation_frames.push_back(_data->assets.GetTexture("throw_frame_2"));
+				_throw_animation_frames.push_back(_data->assets.GetTexture("throw_frame_3"));
+				_throw_animation_frames.push_back(_data->assets.GetTexture("throw_frame_4"));
+				_throw_animation_frames.push_back(_data->assets.GetTexture("throw_frame_5"));
+				_throw_animation_frames.push_back(_data->assets.GetTexture("throw_frame_6"));
+				_throw_animation_frames.push_back(_data->assets.GetTexture("throw_frame_7"));
+				_throw_animation_frames.push_back(_data->assets.GetTexture("throw_frame_8"));
+				_throw_animation_frames.push_back(_data->assets.GetTexture("throw_frame_9"));
 
 				character_sprite.setTexture(_attack_animation_frames.at(_animationIterator));
 				/* character_sprite.setPosition(100,_data->window.getSize().y-150); */
@@ -122,42 +122,28 @@ namespace Sagar
 						current_animation = _throw_animation_frames;
 						_character_state = THROW_STATE;
 				}
+				else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+				{
+						current_animation = _jump_animation_frames;
+						_character_state = JUMPING_STATE;
+				}
+				else
+				{
+						_character_state = IDLE_STATE;
+				}
 
-				if(_character_state == ATTACK_STATE)
+
+				if(_character_state == IDLE_STATE)
 				{
-						if(animation->getIterator()>current_animation.size())
-						{
-								current_animation = _idle_animation_frames;
-								_character_state = IDLE_STATE;
-						}
-						else{
-								animation->Update(character_sprite,current_animation,_clock,false,dt);
-						}
+						current_animation = _idle_animation_frames;
+						animation->Update(character_sprite,current_animation,false,dt);
 				}
-				else if(_character_state == RUNNING_STATE)
+				else
 				{
-						animation->Update(character_sprite,current_animation,_clock,false,dt);
-				}
-				else if(_character_state == JUMPING_STATE)
-				{
-						animation->Update(character_sprite,current_animation,_clock,false,dt);
-				}
-				else if(_character_state == SLIDE_STATE)
-				{
-						animation->Update(character_sprite,current_animation,_clock,false,dt);
-				}
-				else if(_character_state == THROW_STATE)
-				{
-						animation->Update(character_sprite,current_animation,_clock,false,dt);
-				}
-				else if(_character_state == THROW_STATE)
-				{
-						animation->Update(character_sprite,current_animation,_clock,false,dt);
+						animation->Update(character_sprite,current_animation,false,dt);
 				}
 				character_sprite.move(movement);
 		}
-
-
 
 
 		void Character::playAudio()

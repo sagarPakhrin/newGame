@@ -6,7 +6,7 @@ namespace Sagar
 		{
 				this->switchTime = switchTime;
 		}
-		void Animation::Update(sf::Sprite &sprite, std::vector<sf::Texture> &_animation_frames,sf::Clock &_clock,bool faceLeft,float dt)
+		void Animation::Update(sf::Sprite &sprite, std::vector<sf::Texture> &_animation_frames,bool faceLeft,float dt)
 		{
 				totalTime += dt;
 				if(totalTime >= switchTime)
