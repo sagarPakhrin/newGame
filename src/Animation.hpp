@@ -1,4 +1,6 @@
 #pragma once
+
+#include <SFML/Graphics.hpp>
 #include <vector>
 #include "DEFINATIONS.hpp"
 
@@ -7,11 +9,12 @@ namespace Sagar
 		class Animation
 		{
 				public:
-						Animation();
+						/* Animation(sf::Sprite* sprite,std::vector _animation_frames); */
+						Animation(){}
 						~Animation(){}
-						void Update(float dt);
+						void Update(sf::Sprite &sprite, std::vector<sf::Texture> _animation_frames, float dt);
 				private:
 						unsigned int _animationIterator=0;
-						std::vector<sf::Texture> _animation_frames;
-		}
+						/* std::vector<sf::Texture> _animation_frames; */
+		};
 }
