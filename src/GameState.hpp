@@ -4,6 +4,7 @@
 #include "State.hpp"
 #include "Game.hpp"
 #include "Character.hpp"
+#include "Ground.hpp"
 namespace Sagar
 {
 		class GameState: public State
@@ -23,5 +24,6 @@ namespace Sagar
 						sf::Music _music;
 
 						Character *character;
+						Ground *ground1;
 		};
 }

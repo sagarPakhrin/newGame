@@ -85,6 +85,7 @@ namespace Sagar
 				_data->assets.LoadTexture("throw_frame_8", THROW_SPRITE_8);
 				_data->assets.LoadTexture("throw_frame_9", THROW_SPRITE_9);
 
+				_data->assets.LoadTexture("ground_image", GROUND_FILE_PATH);
 
 				if(_music.openFromFile(GAME_MUSIC))
 				{
@@ -95,6 +96,7 @@ namespace Sagar
 				_background.setTexture(this->_data->assets.GetTexture("Game Background"));
 				_background.setScale(0.7,0.7);
 				character = new Character(_data);
+				ground1 = new Ground(_data);
 		}
 
 		void GameState::HandleInput()
@@ -120,6 +122,7 @@ namespace Sagar
 				_data->window.clear(sf::Color(255,255,255));
 				_data->window.draw(_background);
 
+				ground1->Draw();
 				character->Draw();
 				_data->window.display();
 		}

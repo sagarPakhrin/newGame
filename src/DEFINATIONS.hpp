@@ -11,6 +11,7 @@
 #define GAME_BACKGROUND_FILE_PATH "Resources/images/BG_BACKUP.png"
 #define PAUSE_BUTTON "Resources/res/Pause Button.png"
 #define CHARACTER_ONE_FILE_PATH "Resources/images/character.png"
+#define GROUND_FILE_PATH "Resources/images/Ground.png"
 
 #define CHARACTER_ANIMATION_DURATION 4.0f
 

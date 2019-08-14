@@ -75,7 +75,7 @@ namespace Sagar
 
 				character_sprite.setTexture(_attack_animation_frames.at(_animationIterator));
 				/* character_sprite.setPosition(100,_data->window.getSize().y-150); */
-				character_sprite.setPosition(100,_data->window.getSize().y - (character_sprite.getTexture()->getSize().x * 0.3)/2);
+				character_sprite.setPosition(100,_data->window.getSize().y - (character_sprite.getTexture()->getSize().x * 0.3)/2 - 25);
 				character_sprite.setScale(0.3,0.3);
 				character_sprite.setOrigin(character_sprite.getTexture()->getSize().x/2,character_sprite.getTexture()->getSize().y/2);
 				current_animation = _idle_animation_frames;
@@ -144,6 +144,16 @@ namespace Sagar
 						animation->Update(character_sprite,current_animation,false,dt);
 				}
 				character_sprite.move(movement);
+
+				/* check if boundry crossed */
+				if(character_sprite.getPosition().x <= (character_sprite.getTexture()->getSize().x*0.3)/2)
+				{
+						character_sprite.setPosition((character_sprite.getTexture()->getSize().x*0.3)/2,character_sprite.getPosition().y);
+				}
+				if(character_sprite.getPosition().x >= _data->window.getSize().x - (character_sprite.getTexture()->getSize().x*0.3)/2)
+				{
+						character_sprite.setPosition(_data->window.getSize().x - (character_sprite.getTexture()->getSize().x*0.3)/2,character_sprite.getPosition().y);
+				}
 		}
 
 

@@ -45,7 +45,7 @@ namespace Sagar
 
 						sf::Music sword_slash;
 
-						float speed = 100;
+						float speed = 330;
 
 						sf::Clock _clock;
 		};
