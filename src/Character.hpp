@@ -24,6 +24,7 @@ namespace Sagar
 						void Attack(float dt);
 						void Jump(float dt);
 						void Animate();
+						~Character(){}
 				private:
 						GameDataRef _data;
 						sf::Sprite character_sprite;
