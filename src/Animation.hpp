@@ -13,6 +13,7 @@ namespace Sagar
 						Animation(float switchTime);
 						~Animation(){}
 						void Update(sf::Sprite &sprite, std::vector<sf::Texture> &_animation_frames,sf::Clock &_clock,bool faceLeft,float dt);
+						int getIterator();
 				private:
 						unsigned int _animationIterator=0;
 						/* std::vector<sf::Texture> _animation_frames; */

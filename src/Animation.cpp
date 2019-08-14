@@ -26,4 +26,9 @@ namespace Sagar
 
 				/* if(faceLeft) */
 		}
+
+		int Animation::getIterator()
+		{
+				return static_cast<int>(_animationIterator);
+		}
 }

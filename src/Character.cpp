@@ -122,15 +122,17 @@ namespace Sagar
 						current_animation = _throw_animation_frames;
 						_character_state = THROW_STATE;
 				}
-				else
-				{
-						current_animation = _idle_animation_frames;
-						_character_state = IDLE_STATE;
-				}
 
 				if(_character_state == ATTACK_STATE)
 				{
-						animation->Update(character_sprite,current_animation,_clock,false,dt);
+						if(animation->getIterator()>current_animation.size())
+						{
+								current_animation = _idle_animation_frames;
+								_character_state = IDLE_STATE;
+						}
+						else{
+								animation->Update(character_sprite,current_animation,_clock,false,dt);
+						}
 				}
 				else if(_character_state == RUNNING_STATE)
 				{
@@ -148,7 +150,7 @@ namespace Sagar
 				{
 						animation->Update(character_sprite,current_animation,_clock,false,dt);
 				}
-				else
+				else if(_character_state == THROW_STATE)
 				{
 						animation->Update(character_sprite,current_animation,_clock,false,dt);
 				}
