@@ -1,5 +1,6 @@
 #include "Character.hpp"
 #include <iostream>
+#include "Animation.hpp"
 
 namespace Sagar
 {
@@ -54,6 +55,7 @@ namespace Sagar
 				/* character_sprite.setPosition(100,_data->window.getSize().y-150); */
 				character_sprite.setPosition(100,_data->window.getSize().y-150);
 				character_sprite.setScale(0.3,0.3);
+				animation = new Animation();
 		}
 
 		void Character::Draw()
@@ -67,6 +69,6 @@ namespace Sagar
 
 		void Character::Update(float dt)
 		{
-
+				animation->Update(character_sprite,_idle_animation_frames,_clock,dt);
 		}
 }

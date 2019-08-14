@@ -4,6 +4,7 @@
 #include "DEFINATIONS.hpp"
 
 #include "Game.hpp"
+#include "Animation.hpp"
 #include <vector>
 
 namespace Sagar
@@ -26,6 +27,8 @@ namespace Sagar
 				private:
 						GameDataRef _data;
 						sf::Sprite character_sprite;
+						Animation *animation;
+
 
 						unsigned int _animationIterator;
 						unsigned int _character_state = IDLE_STATE;
