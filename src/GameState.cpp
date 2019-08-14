@@ -62,6 +62,30 @@ namespace Sagar
 				_data->assets.LoadTexture("jump_frame_9", JUMP_SPRITE_9);
 
 
+				_data->assets.LoadTexture("slide_frame_0", SLIDE_SPRITE_0);
+				_data->assets.LoadTexture("slide_frame_1", SLIDE_SPRITE_1);
+				_data->assets.LoadTexture("slide_frame_2", SLIDE_SPRITE_2);
+				_data->assets.LoadTexture("slide_frame_3", SLIDE_SPRITE_3);
+				_data->assets.LoadTexture("slide_frame_4", SLIDE_SPRITE_4);
+				_data->assets.LoadTexture("slide_frame_5", SLIDE_SPRITE_5);
+				_data->assets.LoadTexture("slide_frame_6", SLIDE_SPRITE_6);
+				_data->assets.LoadTexture("slide_frame_7", SLIDE_SPRITE_7);
+				_data->assets.LoadTexture("slide_frame_8", SLIDE_SPRITE_8);
+				_data->assets.LoadTexture("slide_frame_9", SLIDE_SPRITE_9);
+
+
+				_data->assets.LoadTexture("throw_frame_0", THROW_SPRITE_0);
+				_data->assets.LoadTexture("throw_frame_1", THROW_SPRITE_1);
+				_data->assets.LoadTexture("throw_frame_2", THROW_SPRITE_2);
+				_data->assets.LoadTexture("throw_frame_3", THROW_SPRITE_3);
+				_data->assets.LoadTexture("throw_frame_4", THROW_SPRITE_4);
+				_data->assets.LoadTexture("throw_frame_5", THROW_SPRITE_5);
+				_data->assets.LoadTexture("throw_frame_6", THROW_SPRITE_6);
+				_data->assets.LoadTexture("throw_frame_7", THROW_SPRITE_7);
+				_data->assets.LoadTexture("throw_frame_8", THROW_SPRITE_8);
+				_data->assets.LoadTexture("throw_frame_9", THROW_SPRITE_9);
+
+
 				if(_music.openFromFile(GAME_MUSIC))
 				{
 						_music.play();

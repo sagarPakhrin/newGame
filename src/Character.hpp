@@ -23,7 +23,7 @@ namespace Sagar
 						void Animate(float dt);
 						void Attack(float dt);
 						void Jump(float dt);
-						void Tap();
+						void Animate();
 				private:
 						GameDataRef _data;
 						sf::Sprite character_sprite;
@@ -37,13 +37,14 @@ namespace Sagar
 						std::vector<sf::Texture> _attack_animation_frames;
 						std::vector<sf::Texture> _run_animation_frames;
 						std::vector<sf::Texture> _jump_animation_frames;
+						std::vector<sf::Texture> _slide_animation_frames;
+						std::vector<sf::Texture> _throw_animation_frames;
+
+						std::vector<sf::Texture> current_animation;
 
 						sf::Music sword_slash;
 
-						/* static constexpr float speed = 2.0f; */
-						unsigned int character_state = IDLE_STATE;
-
-						float speed = 150;
+						float speed = 100;
 
 						sf::Clock _clock;
 		};

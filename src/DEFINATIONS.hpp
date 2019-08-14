@@ -18,7 +18,8 @@
 #define ATTACK_STATE  1
 #define RUNNING_STATE 2
 #define JUMPING_STATE  3
-#define FALLING_STATE  4
+#define SLIDE_STATE  5
+#define THROW_STATE  6
 
 #define UP 0
 #define DOWN 1
@@ -66,6 +67,29 @@
 #define JUMP_SPRITE_7 "Resources/images/ninjagirlnew/Jump__007.png"
 #define JUMP_SPRITE_8 "Resources/images/ninjagirlnew/Jump__008.png"
 #define JUMP_SPRITE_9 "Resources/images/ninjagirlnew/Jump__009.png"
+
+#define SLIDE_SPRITE_0 "Resources/images/ninjagirlnew/Slide__000.png"
+#define SLIDE_SPRITE_1 "Resources/images/ninjagirlnew/Slide__001.png"
+#define SLIDE_SPRITE_2 "Resources/images/ninjagirlnew/Slide__002.png"
+#define SLIDE_SPRITE_3 "Resources/images/ninjagirlnew/Slide__003.png"
+#define SLIDE_SPRITE_4 "Resources/images/ninjagirlnew/Slide__004.png"
+#define SLIDE_SPRITE_5 "Resources/images/ninjagirlnew/Slide__005.png"
+#define SLIDE_SPRITE_6 "Resources/images/ninjagirlnew/Slide__006.png"
+#define SLIDE_SPRITE_7 "Resources/images/ninjagirlnew/Slide__007.png"
+#define SLIDE_SPRITE_8 "Resources/images/ninjagirlnew/Slide__008.png"
+#define SLIDE_SPRITE_9 "Resources/images/ninjagirlnew/Slide__009.png"
+
+
+#define THROW_SPRITE_0 "Resources/images/ninjagirlnew/Throw__000.png"
+#define THROW_SPRITE_1 "Resources/images/ninjagirlnew/Throw__001.png"
+#define THROW_SPRITE_2 "Resources/images/ninjagirlnew/Throw__002.png"
+#define THROW_SPRITE_3 "Resources/images/ninjagirlnew/Throw__003.png"
+#define THROW_SPRITE_4 "Resources/images/ninjagirlnew/Throw__004.png"
+#define THROW_SPRITE_5 "Resources/images/ninjagirlnew/Throw__005.png"
+#define THROW_SPRITE_6 "Resources/images/ninjagirlnew/Throw__006.png"
+#define THROW_SPRITE_7 "Resources/images/ninjagirlnew/Throw__007.png"
+#define THROW_SPRITE_8 "Resources/images/ninjagirlnew/Throw__008.png"
+#define THROW_SPRITE_9 "Resources/images/ninjagirlnew/Throw__009.png"
 
 
 #define GAME_MUSIC "Resources/audio/mainMusic.wav"
