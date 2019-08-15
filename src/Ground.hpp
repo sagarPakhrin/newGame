@@ -18,9 +18,8 @@ namespace Sagar
 						void Draw();
 						void Update(float dt);
 
-						Collider &GetCollider();
+						const Collider GetCollider(){return Collider(ground);}
 
-						const sf::Sprite &GetSprite() const;
 				private:
 						GameDataRef _data;
 						sf::Sprite ground;

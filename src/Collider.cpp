@@ -2,10 +2,8 @@
 #include "Collider.hpp"
 namespace Sagar
 {
-		Collider::Collider(sf::Sprite& player):
-				player(player)
+		Collider::Collider(sf::Sprite& player):player(player)
 		{
-
 		}
 		bool Collider::CheckCollision(Collider& other, sf::Vector2f& dirn, float push)
 		{

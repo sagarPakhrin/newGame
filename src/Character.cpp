@@ -192,8 +192,4 @@ namespace Sagar
 						sword_slash.play();
 		}
 
-		const sf::Sprite Character::&GetSprite() const
-		{
-				return character_sprite;
-		}
 }

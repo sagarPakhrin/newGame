@@ -15,9 +15,4 @@ namespace Sagar
 		{
 				_data->window.draw(ground);
 		}
-		const sf::Sprite Character::&GetSprite() const
-		{
-				return ground;
-		}
-
 }
