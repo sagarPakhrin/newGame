@@ -49,7 +49,7 @@ namespace Sagar
 
 						sf::Music sword_slash;
 
-						float speed = 330;
+						float speed = 930;
 						sf::Vector2f velocity;
 						bool canJump;
 						float jumpHeight = 200;

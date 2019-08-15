@@ -160,6 +160,10 @@ namespace Sagar
 				{
 						character_sprite.setPosition(_data->window.getSize().x - (character_sprite.getTexture()->getSize().x*0.3)/2,character_sprite.getPosition().y);
 				}
+				if(character_sprite.getPosition().y >= _data->window.getSize().y - 100)
+				{
+						character_sprite.setPosition(character_sprite.getPosition().x ,_data->window.getSize().y -100);
+				}
 		}
 
 		void Character::OnCollision(sf::Vector2f dirn)
