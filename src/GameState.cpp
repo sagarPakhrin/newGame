@@ -118,7 +118,10 @@ namespace Sagar
 
 				sf::Vector2f dirn;
 
-				/* if(ground1.GetCollider().CheckCollision(character->GetCollider(),dirn,1.0f)) */
+				/* Collider groundCollider = ground1->GetCollider(); */
+				/* Collider characterCollider = character->GetCollider(); */
+
+				/* if(groundCollider.CheckCollision(characterCollider,dirn,1.0f)) */
 				/* 		character->OnCollision(dirn); */
 		}
 
