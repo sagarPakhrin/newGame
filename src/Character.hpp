@@ -6,6 +6,7 @@
 #include "Game.hpp"
 #include "Animation.hpp"
 #include "Collider.hpp"
+#include "Kunai.hpp"
 #include <vector>
 
 namespace Sagar
@@ -46,6 +47,8 @@ namespace Sagar
 						std::vector<sf::Texture> _throw_animation_frames;
 
 						std::vector<sf::Texture> current_animation;
+
+						std::vector<Kunai> _kunais;
 
 						sf::Music sword_slash;
 

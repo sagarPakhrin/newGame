@@ -5,8 +5,8 @@ CC = g++
 
 LIBS = -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 
-TARGET: main.o StateMachine.o AssetManager.o InputManager.o Game.o SplashState.o MainMenuState.o GameState.o Character.o Animation.o Ground.o Collider.o
-	$(CC) StateMachine.o Game.o Ground.o Collider.o InputManager.o AssetManager.o SplashState.o MainMenuState.o GameState.o Character.o Animation.o main.o -o main $(LIBS)
+TARGET: main.o StateMachine.o Kunai.o AssetManager.o InputManager.o Game.o SplashState.o MainMenuState.o GameState.o Character.o Animation.o Ground.o Collider.o
+	$(CC) StateMachine.o Game.o Ground.o Kunai.o Collider.o InputManager.o AssetManager.o SplashState.o MainMenuState.o GameState.o Character.o Animation.o main.o -o main $(LIBS)
 
 main.o: src/main.cpp $(src)/DEFINATIONS.hpp
 	$(CC) $(CFLAGS) $(src)/main.cpp
@@ -43,6 +43,9 @@ Ground.o: $(src)/Ground.hpp $(src)/Ground.cpp $(src)/DEFINATIONS.hpp
 
 Collider.o: $(src)/Collider.hpp $(src)/Collider.cpp
 	$(CC) $(CFLAGS) $(src)/Collider.cpp
+
+Kunai.o: $(src)/Kunai.hpp $(src)/Kunai.cpp
+	$(CC) $(CFLAGS) $(src)/Kunai.cpp
 
 clean:
 	rm -f *.o main
