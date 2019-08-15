@@ -120,8 +120,6 @@ namespace Sagar
 				Collider groundCollider = ground1->GetCollider();
 				Collider characterCollider = character->GetCollider();
 
-				std::cout<<characterCollider.GetPosition().x;
-
 				if(groundCollider.CheckCollision(characterCollider,dirn,1.0f))
 						character->OnCollision(dirn);
 		}

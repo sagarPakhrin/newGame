@@ -51,7 +51,7 @@ namespace Sagar
 						}
 						else
 						{
-								if(deltaX > 0.0f)
+								if(deltaY > 0.0f)
 								{
 										Move(0.0f,intersectY * (1.0f - push));
 										other.Move(0.0f,-intersectY * push);

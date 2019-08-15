@@ -18,7 +18,7 @@ namespace Sagar
 						void Draw();
 						void Update(float dt);
 
-						const Collider GetCollider(){return Collider(ground);}
+						const Collider GetCollider(){return Collider(this->ground);}
 
 				private:
 						GameDataRef _data;

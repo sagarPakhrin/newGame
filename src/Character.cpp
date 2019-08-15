@@ -137,19 +137,22 @@ namespace Sagar
 						_character_state = IDLE_STATE;
 				}
 
+
+
+				/* if(_character_state == IDLE_STATE) */
+				/* { */
+				/* 		current_animation = _idle_animation_frames; */
+				/* 		animation->Update(character_sprite,current_animation,false,dt); */
+				/* } */
+				/* else */
+				/* { */
+				/* 		animation->Update(character_sprite,current_animation,false,dt); */
+				/* } */
+
+
+
 				/* setting gravity */
 				velocity.y +=981.0f * dt;
-
-
-				if(_character_state == IDLE_STATE)
-				{
-						current_animation = _idle_animation_frames;
-						animation->Update(character_sprite,current_animation,false,dt);
-				}
-				else
-				{
-						animation->Update(character_sprite,current_animation,false,dt);
-				}
 				character_sprite.move(velocity*dt);
 
 				/* check if boundry crossed */

@@ -3,7 +3,7 @@ namespace Sagar
 {
 		class Collider{
 				public:
-						Collider(sf::Sprite &player);
+						Collider(sf::Sprite& player);
 						~Collider(){};
 
 						void Move(float dx,float dy){player.move(dx,dy);}
