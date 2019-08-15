@@ -75,8 +75,7 @@ namespace Sagar
 				_throw_animation_frames.push_back(_data->assets.GetTexture("throw_frame_9"));
 
 				character_sprite.setTexture(_attack_animation_frames.at(_animationIterator));
-				/* character_sprite.setPosition(100,_data->window.getSize().y-150); */
-				character_sprite.setPosition(100,_data->window.getSize().y - (character_sprite.getTexture()->getSize().x * 0.3)/2 - 200);
+				character_sprite.setPosition(100,_data->window.getSize().y - (character_sprite.getTexture()->getSize().x * 0.3)/2 - 2000);
 				character_sprite.setScale(0.3,0.3);
 				character_sprite.setOrigin(character_sprite.getTexture()->getSize().x/2,character_sprite.getTexture()->getSize().y/2);
 				current_animation = _idle_animation_frames;
@@ -107,10 +106,9 @@ namespace Sagar
 						current_animation = _run_animation_frames;
 						_character_state = RUNNING_STATE;
 				}
-				else if(sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+
+				if(sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 				{
-						playAudio();
-						current_animation = _attack_animation_frames;
 						_character_state = ATTACK_STATE;
 				}
 				else if(sf::Keyboard::isKeyPressed(sf::Keyboard::S))
@@ -119,23 +117,17 @@ namespace Sagar
 				}
 				else if(sf::Keyboard::isKeyPressed(sf::Keyboard::T))
 				{
-						current_animation = _throw_animation_frames;
 						_character_state = THROW_STATE;
 				}
 				else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && canJump)
 				{
 						canJump = false;
 						velocity.y = -sqrt(2.0f * 981.0f * jumpHeight);
-						
-						// swuare root 2.0f * gravity * jumpheight;
+
+						// square root 2.0f * gravity * jumpheight;
 						current_animation = _jump_animation_frames;
 						_character_state = JUMPING_STATE;
 				}
-				else
-				{
-						_character_state = IDLE_STATE;
-				}
-
 
 
 				if(_character_state == IDLE_STATE)
@@ -143,12 +135,46 @@ namespace Sagar
 						current_animation = _idle_animation_frames;
 						animation->Update(character_sprite,current_animation,false,dt);
 				}
+				else if(_character_state == THROW_STATE)
+				{
+						current_animation = _throw_animation_frames;
+						animation->Update(character_sprite,current_animation,false,dt);
+						if(animation->getIterator()>=(int)current_animation.size()-2)
+						{
+								_character_state = IDLE_STATE;
+						}
+				}
 				else if(_character_state == SLIDE_STATE)
 				{
 						current_animation = _slide_animation_frames;
-						character_sprite.setPosition(character_sprite.getPosition().x,_data->window.getSize().y + 500);
-						character_sprite.move(50,0);
+						character_sprite.setPosition(character_sprite.getPosition().x,_data->window.getSize().y + 20);
+						character_sprite.move(20,0);
 						animation->Update(character_sprite,current_animation,false,dt);
+						if(animation->getIterator()>=(int)current_animation.size()-2)
+						{
+								_character_state = IDLE_STATE;
+						}
+				}
+				else if(_character_state == ATTACK_STATE)
+				{
+						playAudio();
+						current_animation = _attack_animation_frames;
+						animation->Update(character_sprite,current_animation,false,dt);
+						if(animation->getIterator()>=(int)current_animation.size()-2)
+						{
+								_character_state = IDLE_STATE;
+						}
+				}
+				else if(_character_state == RUNNING_STATE)
+				{
+						if(!sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && !sf::Keyboard::isKeyPressed(sf::Keyboard::Left) )
+						{
+
+								_character_state = IDLE_STATE;
+						}
+						else{
+								animation->Update(character_sprite,current_animation,false,dt);
+						}
 				}
 				else
 				{
