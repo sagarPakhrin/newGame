@@ -1,5 +1,9 @@
 #include <SFML/Graphics.hpp>
 #include "Collider.hpp"
+
+/* delte this */ 
+#include <iostream>
+
 namespace Sagar
 {
 		Collider::Collider(sf::Sprite& player):player(player)
@@ -13,8 +17,8 @@ namespace Sagar
 				/* GetHalfSize is my own function */
 				sf::Vector2f otherHalfSize = other.GetHalfSize();
 
-				sf::Vector2f thisPosition = GetPosition();
-				sf::Vector2f thisHalfSize = GetHalfSize();
+				sf::Vector2f thisPosition = this->GetPosition();
+				sf::Vector2f thisHalfSize = this->GetHalfSize();
 
 				float deltaX = otherPosition.x - thisPosition.x;
 				float deltaY = otherPosition.y - thisPosition.y;
@@ -64,7 +68,6 @@ namespace Sagar
 										dirn.y = -1.0f;
 								}
 						}
-
 
 						return true;
 				}

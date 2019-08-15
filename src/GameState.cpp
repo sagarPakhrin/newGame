@@ -49,7 +49,6 @@ namespace Sagar
 				_data->assets.LoadTexture("run_frame_8", RUN_SPRITE_8);
 				_data->assets.LoadTexture("run_frame_9", RUN_SPRITE_9);
 
-
 				_data->assets.LoadTexture("jump_frame_0", JUMP_SPRITE_0);
 				_data->assets.LoadTexture("jump_frame_1", JUMP_SPRITE_1);
 				_data->assets.LoadTexture("jump_frame_2", JUMP_SPRITE_2);
@@ -118,11 +117,13 @@ namespace Sagar
 
 				sf::Vector2f dirn;
 
-				/* Collider groundCollider = ground1->GetCollider(); */
-				/* Collider characterCollider = character->GetCollider(); */
+				Collider groundCollider = ground1->GetCollider();
+				Collider characterCollider = character->GetCollider();
 
-				/* if(groundCollider.CheckCollision(characterCollider,dirn,1.0f)) */
-				/* 		character->OnCollision(dirn); */
+				std::cout<<characterCollider.GetPosition().x;
+
+				if(groundCollider.CheckCollision(characterCollider,dirn,1.0f))
+						character->OnCollision(dirn);
 		}
 
 		void GameState::Draw(float dt)

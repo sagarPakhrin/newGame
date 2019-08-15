@@ -123,10 +123,11 @@ namespace Sagar
 						current_animation = _throw_animation_frames;
 						_character_state = THROW_STATE;
 				}
-				else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+				else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && canJump)
 				{
 						canJump = false;
 						velocity.y = -sqrt(2.0f * 981.0f * jumpHeight);
+						
 						// swuare root 2.0f * gravity * jumpheight;
 						current_animation = _jump_animation_frames;
 						_character_state = JUMPING_STATE;
@@ -160,10 +161,10 @@ namespace Sagar
 				{
 						character_sprite.setPosition(_data->window.getSize().x - (character_sprite.getTexture()->getSize().x*0.3)/2,character_sprite.getPosition().y);
 				}
-				if(character_sprite.getPosition().y >= _data->window.getSize().y - 100)
-				{
-						character_sprite.setPosition(character_sprite.getPosition().x ,_data->window.getSize().y -100);
-				}
+				/* if(character_sprite.getPosition().y >= _data->window.getSize().y - 100) */
+				/* { */
+				/* 		character_sprite.setPosition(character_sprite.getPosition().x ,_data->window.getSize().y -100); */
+				/* } */
 		}
 
 		void Character::OnCollision(sf::Vector2f dirn)
@@ -179,6 +180,7 @@ namespace Sagar
 				}
 				if(dirn.y > 0.0f)
 				{
+						/* collision on the Bottom */
 						velocity.y = 0.0f;
 						canJump = true;
 				}
@@ -188,7 +190,6 @@ namespace Sagar
 						velocity.y = 0.0f;
 				}
 		}
-
 
 		void Character::playAudio()
 		{

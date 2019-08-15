@@ -26,6 +26,5 @@ namespace Sagar
 
 						Character *character;
 						Ground *ground1;
-
 		};
 }
