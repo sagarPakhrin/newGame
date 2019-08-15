@@ -76,7 +76,7 @@ namespace Sagar
 
 				character_sprite.setTexture(_attack_animation_frames.at(_animationIterator));
 				/* character_sprite.setPosition(100,_data->window.getSize().y-150); */
-				character_sprite.setPosition(100,_data->window.getSize().y - (character_sprite.getTexture()->getSize().x * 0.3)/2 - 25);
+				character_sprite.setPosition(100,_data->window.getSize().y - (character_sprite.getTexture()->getSize().x * 0.3)/2 - 200);
 				character_sprite.setScale(0.3,0.3);
 				character_sprite.setOrigin(character_sprite.getTexture()->getSize().x/2,character_sprite.getTexture()->getSize().y/2);
 				current_animation = _idle_animation_frames;
@@ -115,7 +115,6 @@ namespace Sagar
 				}
 				else if(sf::Keyboard::isKeyPressed(sf::Keyboard::S))
 				{
-						current_animation = _slide_animation_frames;
 						_character_state = SLIDE_STATE;
 				}
 				else if(sf::Keyboard::isKeyPressed(sf::Keyboard::T))
@@ -139,15 +138,22 @@ namespace Sagar
 
 
 
-				/* if(_character_state == IDLE_STATE) */
-				/* { */
-				/* 		current_animation = _idle_animation_frames; */
-				/* 		animation->Update(character_sprite,current_animation,false,dt); */
-				/* } */
-				/* else */
-				/* { */
-				/* 		animation->Update(character_sprite,current_animation,false,dt); */
-				/* } */
+				if(_character_state == IDLE_STATE)
+				{
+						current_animation = _idle_animation_frames;
+						animation->Update(character_sprite,current_animation,false,dt);
+				}
+				else if(_character_state == SLIDE_STATE)
+				{
+						current_animation = _slide_animation_frames;
+						character_sprite.setPosition(character_sprite.getPosition().x,_data->window.getSize().y + 500);
+						character_sprite.move(50,0);
+						animation->Update(character_sprite,current_animation,false,dt);
+				}
+				else
+				{
+						animation->Update(character_sprite,current_animation,false,dt);
+				}
 
 
 
@@ -164,10 +170,11 @@ namespace Sagar
 				{
 						character_sprite.setPosition(_data->window.getSize().x - (character_sprite.getTexture()->getSize().x*0.3)/2,character_sprite.getPosition().y);
 				}
-				/* if(character_sprite.getPosition().y >= _data->window.getSize().y - 100) */
-				/* { */
-				/* 		character_sprite.setPosition(character_sprite.getPosition().x ,_data->window.getSize().y -100); */
-				/* } */
+				if(character_sprite.getPosition().y >= _data->window.getSize().y - 100)
+				{
+						character_sprite.setPosition(character_sprite.getPosition().x ,_data->window.getSize().y -100);
+						canJump = true;
+				}
 		}
 
 		void Character::OnCollision(sf::Vector2f dirn)

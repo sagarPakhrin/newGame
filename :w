@@ -17,8 +17,8 @@ namespace Sagar
 				/* GetHalfSize is my own function */
 				sf::Vector2f otherHalfSize = other.GetHalfSize();
 
-				sf::Vector2f thisPosition = GetPosition();
-				sf::Vector2f thisHalfSize = GetHalfSize();
+				sf::Vector2f thisPosition = this->GetPosition();
+				sf::Vector2f thisHalfSize = this->GetHalfSize();
 
 				float deltaX = otherPosition.x - thisPosition.x;
 				float deltaY = otherPosition.y - thisPosition.y;
@@ -73,21 +73,5 @@ namespace Sagar
 				}
 
 				return false;
-		}
-		sf::Vector2f Collider::GetHalfSize()
-		{
-				sf::Vector2f size;
-				size.x = static_cast<float>(player.getTexture()->getSize().x/2.0f);
-				size.y = static_cast<float>(player.getTexture()->getSize().y/2.0f);
-				return size;
-		}
-
-
-		sf::Vector2f Collider::GetCharacterHalfSize()
-		{
-				sf::Vector2f size;
-				size.x = static_cast<float>(player.getTexture()->getSize().x*0.3f/2.0f);
-				size.y = static_cast<float>(player.getTexture()->getSize().y*0.3f/2.0f);
-				return size;
 		}
 }
