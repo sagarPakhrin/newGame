@@ -13,6 +13,7 @@ namespace Sagar
 						Enemy(GameDataRef data);
 						void Draw();
 						void Update(float dt);
+						sf::Sprite getEnemySprite(){return this->enemyCharacter;}
 				private:
 						GameDataRef _data;
 						Animation *animation;

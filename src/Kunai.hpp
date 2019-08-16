@@ -12,6 +12,7 @@ namespace Sagar
 						void Draw(sf::RenderWindow& window);
 						void Update(float dt);
 						void SetPosition(sf::Vector2f position){kunai.setPosition(position);}
+						sf::Sprite getKunaiSprite(){return this->kunai;}
 				private:
 						sf::Sprite kunai;
 						float kunaiSpeed = 980.0f;

@@ -172,8 +172,14 @@ namespace Sagar
 
 
 
-				for(Kunai &kunai: _kunais)
+				for(Kunai& kunai: _kunais)
 				{
+						sf::Sprite kunaiSprite = kunai.getKunaiSprite();
+						sf::Sprite enemySprite = enemy->getEnemySprite();
+						if(MyCollisionDetectoer(kunaiSprite,enemySprite))
+						{
+
+						}
 				}
 
 
