@@ -86,11 +86,28 @@ namespace Sagar
 				_data->assets.LoadTexture("throw_frame_8", THROW_SPRITE_8);
 				_data->assets.LoadTexture("throw_frame_9", THROW_SPRITE_9);
 
+
+				_data->assets.LoadTexture("enemy_running_frame_0", ENEMY_RUNNING_TEXTURE_0);
+				_data->assets.LoadTexture("enemy_running_frame_1", ENEMY_RUNNING_TEXTURE_1);
+				_data->assets.LoadTexture("enemy_running_frame_2", ENEMY_RUNNING_TEXTURE_2);
+				_data->assets.LoadTexture("enemy_running_frame_3", ENEMY_RUNNING_TEXTURE_3);
+				_data->assets.LoadTexture("enemy_running_frame_4", ENEMY_RUNNING_TEXTURE_4);
+				_data->assets.LoadTexture("enemy_running_frame_5", ENEMY_RUNNING_TEXTURE_5);
+				_data->assets.LoadTexture("enemy_running_frame_6", ENEMY_RUNNING_TEXTURE_6);
+				_data->assets.LoadTexture("enemy_running_frame_7", ENEMY_RUNNING_TEXTURE_7);
+
+				_data->assets.LoadTexture("throw_frame_9", THROW_SPRITE_9);
+
+
+
+
+
 				_data->assets.LoadTexture("ground_image", GROUND_FILE_PATH);
 
 				if(_music.openFromFile(GAME_MUSIC))
 				{
 						_music.play();
+						_music.setVolume(70);
 				}
 
 
@@ -98,6 +115,7 @@ namespace Sagar
 				_background.setScale(0.7,0.7);
 				character = new Character(_data);
 				ground1 = new Ground(_data);
+				enemy = new Enemy(_data);
 		}
 
 		void GameState::HandleInput()
@@ -173,11 +191,11 @@ namespace Sagar
 
 				ground1->Draw();
 				character->Draw();
+				enemy->Draw();
 				for(Kunai& kunai:_kunais)
 				{
 						kunai.Draw(_data->window);
 				}
-
 
 				_data->window.display();
 		}

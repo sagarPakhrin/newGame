@@ -96,6 +96,15 @@
 #define THROW_SPRITE_9 "Resources/images/ninjagirlnew/Throw__009.png"
 
 
+#define ENEMY_RUNNING_TEXTURE_0 "Resources/images/freedinosprite/png/Run (1).png"
+#define ENEMY_RUNNING_TEXTURE_1 "Resources/images/freedinosprite/png/Run (2).png"
+#define ENEMY_RUNNING_TEXTURE_2 "Resources/images/freedinosprite/png/Run (3).png"
+#define ENEMY_RUNNING_TEXTURE_3 "Resources/images/freedinosprite/png/Run (4).png"
+#define ENEMY_RUNNING_TEXTURE_4 "Resources/images/freedinosprite/png/Run (5).png"
+#define ENEMY_RUNNING_TEXTURE_5 "Resources/images/freedinosprite/png/Run (6).png"
+#define ENEMY_RUNNING_TEXTURE_6 "Resources/images/freedinosprite/png/Run (7).png"
+#define ENEMY_RUNNING_TEXTURE_7 "Resources/images/freedinosprite/png/Run (8).png"
+
 #define GAME_MUSIC "Resources/audio/mainMusic.wav"
 #define SWORD_SLASH "Resources/audio/sword_slash.wav"
 

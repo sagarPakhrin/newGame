@@ -1,0 +1,23 @@
+#pragma once
+#include "Game.hpp"
+#include <SFML/Graphics.hpp>
+#include "Animation.hpp"
+#include <vector>
+
+namespace Sagar
+{
+		class Enemy
+		{
+				public:
+				public:
+						Enemy(GameDataRef data);
+						void Draw();
+						void Update(float dt);
+				private:
+						GameDataRef _data;
+						Animation *animation;
+						sf::Sprite enemyCharacter;
+						std::vector<sf::Texture> _running_enemy_frames;
+						std::vector<sf::Texture> current_animation;
+		};
+}

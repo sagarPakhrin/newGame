@@ -5,6 +5,7 @@
 #include "Game.hpp"
 #include "Character.hpp"
 #include "Ground.hpp"
+#include "Enemy.hpp"
 #include "Collider.hpp"
 #include "Kunai.hpp"
 namespace Sagar
@@ -26,6 +27,7 @@ namespace Sagar
 						sf::Music _music;
 
 						Character *character;
+						Enemy *enemy;
 						Ground *ground1;
 						/* Kunai kunai; */
 						std::vector<Kunai> _kunais;
