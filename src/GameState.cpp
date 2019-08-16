@@ -137,6 +137,8 @@ namespace Sagar
 				for(Kunai& kunai:_kunais)
 						kunai.Update(dt);
 
+				enemy->Update(dt);
+
 				sf::Vector2f dirn;
 
 

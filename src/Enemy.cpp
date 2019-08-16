@@ -12,10 +12,11 @@ namespace Sagar
 				_running_enemy_frames.push_back(_data->assets.GetTexture("enemy_running_frame_6"));
 				_running_enemy_frames.push_back(_data->assets.GetTexture("enemy_running_frame_7"));
 
-				enemyCharacter.setTexture(_running_enemy_frames.at(0));
+				enemyCharacter.setTexture(_running_enemy_frames.at(animation_iterator));
 
-
-
+				enemyCharacter.setScale(0.3,0.3);
+				enemyCharacter.setOrigin(enemyCharacter.getTexture()->getSize().x/2,enemyCharacter.getTexture()->getSize().y/2);
+				enemyCharacter.setPosition(_data->window.getSize().x-100,_data->window.getSize().y-100);
 
 				animation = new Animation(0.1);
 		}

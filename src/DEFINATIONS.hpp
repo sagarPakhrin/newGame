@@ -95,7 +95,6 @@
 #define THROW_SPRITE_8 "Resources/images/ninjagirlnew/Throw__008.png"
 #define THROW_SPRITE_9 "Resources/images/ninjagirlnew/Throw__009.png"
 
-
 #define ENEMY_RUNNING_TEXTURE_0 "Resources/images/freedinosprite/png/Run (1).png"
 #define ENEMY_RUNNING_TEXTURE_1 "Resources/images/freedinosprite/png/Run (2).png"
 #define ENEMY_RUNNING_TEXTURE_2 "Resources/images/freedinosprite/png/Run (3).png"

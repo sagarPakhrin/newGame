@@ -16,6 +16,7 @@ namespace Sagar
 				private:
 						GameDataRef _data;
 						Animation *animation;
+						unsigned int animation_iterator = 0;
 						sf::Sprite enemyCharacter;
 						std::vector<sf::Texture> _running_enemy_frames;
 						std::vector<sf::Texture> current_animation;
