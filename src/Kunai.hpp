@@ -7,12 +7,13 @@ namespace Sagar
 		class Kunai
 		{
 				public:
-						Kunai(sf::Texture);
+						Kunai(sf::Texture& texture);
 						~Kunai(){}
-						void Draw();
+						void Draw(sf::RenderWindow& window);
 						void Update(float dt);
-
+						void SetPosition(sf::Vector2f position){kunai.setPosition(position);}
 				private:
 						sf::Sprite kunai;
+						float kunaiSpeed = 980.0f;
 		};
 }

@@ -116,10 +116,39 @@ namespace Sagar
 		void GameState::Update(float dt)
 		{
 				character->Update(dt);
+				for(Kunai& kunai:_kunais)
+						kunai.Update(dt);
+
 				sf::Vector2f dirn;
 
 
-
+				if(sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+				{
+						character->setCharacterState(ATTACK_STATE);
+				}
+				else if(sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+				{
+						character->setCharacterState(SLIDE_STATE);
+				}
+				else if(sf::Keyboard::isKeyPressed(sf::Keyboard::T))
+				{
+						Kunai kunai(_data->assets.GetTexture("kunai"));
+						kunai.SetPosition(character->GetPosition());
+						_kunais.push_back(kunai);
+						character->setCharacterState(THROW_STATE);
+				}
+				else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
+				{
+						character->setCharacterState(JUMPING_STATE);
+				}
+				else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+				{
+						character->setCharacterState(RUNNING_LEFT_STATE);
+				}
+				else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+				{
+						character->setCharacterState(RUNNING_RIGHT_STATE);
+				}
 
 
 
@@ -145,6 +174,12 @@ namespace Sagar
 
 				ground1->Draw();
 				character->Draw();
+				for(Kunai& kunai:_kunais)
+				{
+						kunai.Draw(_data->window);
+				}
+
+
 				_data->window.display();
 		}
 }

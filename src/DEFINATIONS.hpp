@@ -19,8 +19,9 @@
 
 #define IDLE_STATE  0
 #define ATTACK_STATE  1
-#define RUNNING_STATE 2
-#define JUMPING_STATE  3
+#define RUNNING_RIGHT_STATE 2
+#define RUNNING_LEFT_STATE 3
+#define JUMPING_STATE  4
 #define SLIDE_STATE  5
 #define THROW_STATE  6
 

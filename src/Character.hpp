@@ -21,7 +21,9 @@ namespace Sagar
 						void Update(float dt);
 						void Run(float dt);
 						void setDirection(const sf::Vector2f& dir);
-						void setCharacterState(int character_state);
+						void setCharacterState(int character_state){this->_character_state = character_state;}
+						int getCharacterState(int character_state){return (int)this->_character_state;}
+						sf::Vector2f GetPosition(){return this->character_sprite.getPosition();}
 						void playAudio();
 
 						const Collider GetCollider(){return Collider(this->character_sprite);}
@@ -30,6 +32,7 @@ namespace Sagar
 						void Attack(float dt);
 						void Jump(float dt);
 						void OnCollision(sf::Vector2f dirn);
+
 				private:
 						GameDataRef _data;
 						sf::Sprite character_sprite;
@@ -47,8 +50,6 @@ namespace Sagar
 						std::vector<sf::Texture> _throw_animation_frames;
 
 						std::vector<sf::Texture> current_animation;
-
-						std::vector<Kunai> _kunais;
 
 						sf::Music sword_slash;
 

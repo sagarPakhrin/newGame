@@ -1,16 +1,17 @@
 #include "Kunai.hpp"
 namespace Sagar
 {
-		Kunai::Kunai(sf::Texture tex)
+		Kunai::Kunai(sf::Texture& texture)
 		{
-				kunai.setTexture(tex);
+				kunai.setTexture(texture);
+				kunai.setScale(0.6,0.6);
 		}
 		void Kunai::Update(float dt)
 		{
-
+				kunai.move(kunaiSpeed * dt,0);
 		}
-		void Kunai::Draw()
+		void Kunai::Draw(sf::RenderWindow& window)
 		{
-				_data->window.draw(kunai);
+				window.draw(kunai);
 		}
 }

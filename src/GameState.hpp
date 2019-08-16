@@ -6,6 +6,7 @@
 #include "Character.hpp"
 #include "Ground.hpp"
 #include "Collider.hpp"
+#include "Kunai.hpp"
 namespace Sagar
 {
 		class GameState: public State
@@ -26,5 +27,7 @@ namespace Sagar
 
 						Character *character;
 						Ground *ground1;
+						/* Kunai kunai; */
+						std::vector<Kunai> _kunais;
 		};
 }

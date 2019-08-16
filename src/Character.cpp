@@ -85,8 +85,6 @@ namespace Sagar
 		void Character::Draw()
 		{
 				_data->window.draw(character_sprite);
-				for(Kunai& kunai : _kunais)
-						_data->window.draw(kunai);
 		}
 
 		/************************************
@@ -96,53 +94,15 @@ namespace Sagar
 		void Character::Update(float dt)
 		{
 				velocity.x = 0.0f;
-				if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-				{
-						velocity.x +=speed * dt;
-						current_animation = _run_animation_frames;
-						_character_state = RUNNING_STATE;
-				}
-				else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-				{
-						velocity.x -=speed * dt;
-						current_animation = _run_animation_frames;
-						_character_state = RUNNING_STATE;
-				}
-
-				if(sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-				{
-						_character_state = ATTACK_STATE;
-				}
-				else if(sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-				{
-						_character_state = SLIDE_STATE;
-				}
-				else if(sf::Keyboard::isKeyPressed(sf::Keyboard::T))
-				{
-						Kunai kunai(_data->assets.GetTexture("kunai"));
-						_kunais.push_back(kunai);
-						_character_state = THROW_STATE;
-				}
-				else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && canJump)
-				{
-						canJump = false;
-						velocity.y = -sqrt(2.0f * 981.0f * jumpHeight);
-
-						// square root 2.0f * gravity * jumpheight;
-						current_animation = _jump_animation_frames;
-						_character_state = JUMPING_STATE;
-				}
 
 
 				if(_character_state == IDLE_STATE)
 				{
 						current_animation = _idle_animation_frames;
-						animation->Update(character_sprite,current_animation,false,dt);
 				}
 				else if(_character_state == THROW_STATE)
 				{
 						current_animation = _throw_animation_frames;
-						animation->Update(character_sprite,current_animation,false,dt);
 						if(animation->getIterator()>=(int)current_animation.size()-2)
 						{
 								_character_state = IDLE_STATE;
@@ -153,7 +113,6 @@ namespace Sagar
 						current_animation = _slide_animation_frames;
 						character_sprite.setPosition(character_sprite.getPosition().x,_data->window.getSize().y + 20);
 						character_sprite.move(20,0);
-						animation->Update(character_sprite,current_animation,false,dt);
 						if(animation->getIterator()>=(int)current_animation.size()-2)
 						{
 								_character_state = IDLE_STATE;
@@ -163,27 +122,33 @@ namespace Sagar
 				{
 						playAudio();
 						current_animation = _attack_animation_frames;
-						animation->Update(character_sprite,current_animation,false,dt);
 						if(animation->getIterator()>=(int)current_animation.size()-2)
 						{
 								_character_state = IDLE_STATE;
 						}
 				}
-				else if(_character_state == RUNNING_STATE)
-				{
-						if(!sf::Keyboard::isKeyPressed(sf::Keyboard::Right) && !sf::Keyboard::isKeyPressed(sf::Keyboard::Left) )
-						{
 
-								_character_state = IDLE_STATE;
-						}
-						else{
-								animation->Update(character_sprite,current_animation,false,dt);
-						}
-				}
-				else
+				else if(_character_state == JUMPING_STATE && canJump)
 				{
-						animation->Update(character_sprite,current_animation,false,dt);
+						canJump = false;
+						velocity.y = -sqrt(2.0f * 981.0f * jumpHeight);
+						// square root 2.0f * gravity * jumpheight;
+						current_animation = _jump_animation_frames;
+
 				}
+				else if(_character_state == RUNNING_RIGHT_STATE)
+				{
+						velocity.x +=speed * dt;
+						current_animation = _run_animation_frames;
+
+				}
+				else if(_character_state == RUNNING_LEFT_STATE)
+				{
+						velocity.x -=speed * dt;
+						current_animation = _run_animation_frames;
+				}
+
+				animation->Update(character_sprite,current_animation,false,dt);
 
 
 
