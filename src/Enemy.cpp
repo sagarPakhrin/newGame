@@ -23,7 +23,7 @@ namespace Sagar
 		void Enemy::Update(float dt)
 		{
 				current_animation = _running_enemy_frames;
-				animation->Update(enemyCharacter,current_animation,false,dt);
+				animation->Update(enemyCharacter,current_animation,true,dt);
 		}
 		void Enemy::Draw()
 		{
