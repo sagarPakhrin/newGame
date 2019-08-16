@@ -14,6 +14,8 @@ namespace Sagar
 		void GameState::Init()
 		{
 				_data->assets.LoadTexture("Game Background",GAME_BACKGROUND_FILE_PATH);
+				_data->assets.LoadTexture("kunai",KUNAI);
+
 				_data->assets.LoadTexture("idle_frame_0",IDLE_SPRITE_0);
 				_data->assets.LoadTexture("idle_frame_1",IDLE_SPRITE_1);
 				_data->assets.LoadTexture("idle_frame_2",IDLE_SPRITE_2);

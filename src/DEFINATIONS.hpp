@@ -8,6 +8,8 @@
 #define PLAY_BUTTON_FILEPATH "Resources/images/playButton.png"
 #define MAIN_MENU_BACKGROUND_FILEPATH "Resources/images/mainMenu.jpg"
 
+#define KUNAI "Resources/images/ninjagirlnew/Kunai.png"
+
 #define GAME_BACKGROUND_FILE_PATH "Resources/images/BG_BACKUP.png"
 #define PAUSE_BUTTON "Resources/res/Pause Button.png"
 #define CHARACTER_ONE_FILE_PATH "Resources/images/character.png"

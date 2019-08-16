@@ -85,6 +85,8 @@ namespace Sagar
 		void Character::Draw()
 		{
 				_data->window.draw(character_sprite);
+				for(Kunai& kunai : _kunais)
+						_data->window.draw(kunai);
 		}
 
 		/************************************
@@ -117,6 +119,8 @@ namespace Sagar
 				}
 				else if(sf::Keyboard::isKeyPressed(sf::Keyboard::T))
 				{
+						Kunai kunai(_data->assets.GetTexture("kunai"));
+						_kunais.push_back(kunai);
 						_character_state = THROW_STATE;
 				}
 				else if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && canJump)
@@ -232,5 +236,4 @@ namespace Sagar
 				if(sword_slash.openFromFile(SWORD_SLASH))
 						sword_slash.play();
 		}
-
 }
