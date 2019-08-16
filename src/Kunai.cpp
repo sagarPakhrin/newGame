@@ -3,7 +3,7 @@ namespace Sagar
 {
 		Kunai::Kunai(sf::Texture tex)
 		{
-				player.setTexture(tex);
+				kunai.setTexture(tex);
 		}
 		void Kunai::Update(float dt)
 		{
@@ -11,6 +11,6 @@ namespace Sagar
 		}
 		void Kunai::Draw()
 		{
-				/* _data->window.draw(character_sprite); */
+				_data->window.draw(kunai);
 		}
 }

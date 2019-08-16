@@ -13,6 +13,6 @@ namespace Sagar
 						void Update(float dt);
 
 				private:
-						sf::Sprite player;
+						sf::Sprite kunai;
 		};
 }

@@ -116,8 +116,20 @@ namespace Sagar
 		void GameState::Update(float dt)
 		{
 				character->Update(dt);
-
 				sf::Vector2f dirn;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 				Collider groundCollider = ground1->GetCollider();
 				Collider characterCollider = character->GetCollider();
