@@ -105,6 +105,7 @@ namespace Sagar
 						current_animation = _throw_animation_frames;
 						if(animation->getIterator()>=(int)current_animation.size()-2)
 						{
+								animation->resetIterator();
 								_character_state = IDLE_STATE;
 						}
 				}
@@ -115,6 +116,7 @@ namespace Sagar
 						character_sprite.move(20,0);
 						if(animation->getIterator()>=(int)current_animation.size()-2)
 						{
+								animation->resetIterator();
 								_character_state = IDLE_STATE;
 						}
 				}
@@ -124,6 +126,7 @@ namespace Sagar
 						current_animation = _attack_animation_frames;
 						if(animation->getIterator()>=(int)current_animation.size()-2)
 						{
+								animation->resetIterator();
 								_character_state = IDLE_STATE;
 						}
 				}
@@ -138,12 +141,16 @@ namespace Sagar
 				}
 				else if(_character_state == RUNNING_RIGHT_STATE)
 				{
+						faceLeft = false;
+						character_sprite.setScale(0.3,0.3);
 						velocity.x +=speed * dt;
 						current_animation = _run_animation_frames;
 
 				}
 				else if(_character_state == RUNNING_LEFT_STATE)
 				{
+						faceLeft = true;
+						character_sprite.setScale(-0.3,0.3);
 						velocity.x -=speed * dt;
 						current_animation = _run_animation_frames;
 				}
@@ -156,7 +163,7 @@ namespace Sagar
 						}
 				}
 
-				animation->Update(character_sprite,current_animation,false,dt);
+				animation->Update(character_sprite,current_animation,faceLeft,dt);
 
 
 

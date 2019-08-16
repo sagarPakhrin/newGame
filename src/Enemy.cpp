@@ -14,7 +14,7 @@ namespace Sagar
 
 				enemyCharacter.setTexture(_running_enemy_frames.at(animation_iterator));
 
-				enemyCharacter.setScale(0.3,0.3);
+				enemyCharacter.setScale(-0.3f,0.3f);
 				enemyCharacter.setOrigin(enemyCharacter.getTexture()->getSize().x/2,enemyCharacter.getTexture()->getSize().y/2);
 				enemyCharacter.setPosition(_data->window.getSize().x-100,_data->window.getSize().y-100);
 
@@ -23,7 +23,7 @@ namespace Sagar
 		void Enemy::Update(float dt)
 		{
 				current_animation = _running_enemy_frames;
-				animation->Update(enemyCharacter,current_animation,true,dt);
+				animation->Update(enemyCharacter,current_animation,false,dt);
 		}
 		void Enemy::Draw()
 		{

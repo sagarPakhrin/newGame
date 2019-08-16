@@ -14,6 +14,7 @@ namespace Sagar
 						~Animation(){}
 						void Update(sf::Sprite &sprite, std::vector<sf::Texture> &_animation_frames,bool faceLeft,float dt);
 						int getIterator();
+						void resetIterator(){this->_animationIterator = 0;}
 				private:
 						unsigned int _animationIterator=0;
 						/* std::vector<sf::Texture> _animation_frames; */

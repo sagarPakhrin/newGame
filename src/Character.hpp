@@ -56,6 +56,7 @@ namespace Sagar
 						float speed = 930;
 						sf::Vector2f velocity;
 						bool canJump;
+						bool faceLeft=false;
 						float jumpHeight = 200;
 
 						sf::Clock _clock;

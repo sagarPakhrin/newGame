@@ -24,13 +24,14 @@ namespace Sagar
 				}
 				if(faceLeft)
 				{
-						/* sprite.setOrigin({ sprite.getLocalBounds().width, 0  }); */
-						/* sprite.setScale({ -1, 1  }); */
-						sprite.setTexture(_animation_frames.at(_animationIterator));
+						/* sprite.setScale(-abs(sprite.getScale().x),sprite.getScale().y); */
 				}
-				else {
-						sprite.setTexture(_animation_frames.at(_animationIterator));
-				}
+				/* else */
+				/* { */
+				/* 		sprite.setScale(abs(sprite.getScale().x),sprite.getScale().y); */
+
+				/* } */
+				sprite.setTexture(_animation_frames.at(_animationIterator));
 
 		}
 
