@@ -18,7 +18,7 @@ namespace Sagar
 						void HandleInput();
 						void Update(float dt);
 						void Draw(float dt);
-
+						bool MyCollisionDetectoer(sf::Sprite sprite1, sf::Sprite sprite2);
 				private:
 						GameDataRef _data;
 						sf::Clock _clock;
