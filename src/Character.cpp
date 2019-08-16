@@ -148,6 +148,14 @@ namespace Sagar
 						current_animation = _run_animation_frames;
 				}
 
+				if(_character_state == RUNNING_LEFT_STATE || _character_state == RUNNING_RIGHT_STATE)
+				{
+						if(!sf::Keyboard::isKeyPressed(sf::Keyboard::Right)&& !sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+						{
+								_character_state = IDLE_STATE;
+						}
+				}
+
 				animation->Update(character_sprite,current_animation,false,dt);
 
 

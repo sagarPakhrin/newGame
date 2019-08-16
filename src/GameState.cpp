@@ -159,7 +159,6 @@ namespace Sagar
 
 
 
-
 				Collider groundCollider = ground1->GetCollider();
 				Collider characterCollider = character->GetCollider();
 
