@@ -24,7 +24,7 @@ namespace Sagar
 						void setCharacterState(int character_state){this->_character_state = character_state;}
 						int getCharacterState(int character_state){return (int)this->_character_state;}
 						sf::Vector2f GetPosition(){return this->character_sprite.getPosition();}
-						void playAudio();
+						void playAudio(const std::string& audio);
 
 						const Collider GetCollider(){return Collider(this->character_sprite);}
 
@@ -51,7 +51,7 @@ namespace Sagar
 
 						std::vector<sf::Texture> current_animation;
 
-						sf::Music sword_slash;
+						sf::Music audio;
 
 						float speed = 930;
 						sf::Vector2f velocity;

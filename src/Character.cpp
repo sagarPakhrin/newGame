@@ -103,6 +103,7 @@ namespace Sagar
 				else if(_character_state == THROW_STATE)
 				{
 						current_animation = _throw_animation_frames;
+						playAudio(KUNAI_THROW);
 						if(animation->getIterator()>=(int)current_animation.size()-2)
 						{
 								animation->resetIterator();
@@ -122,7 +123,7 @@ namespace Sagar
 				}
 				else if(_character_state == ATTACK_STATE)
 				{
-						playAudio();
+						playAudio(SWORD_SLASH);
 						current_animation = _attack_animation_frames;
 						if(animation->getIterator()>=(int)current_animation.size()-2)
 						{
@@ -211,9 +212,9 @@ namespace Sagar
 				}
 		}
 
-		void Character::playAudio()
+		void Character::playAudio(const std::string& audiofile)
 		{
-				if(sword_slash.openFromFile(SWORD_SLASH))
-						sword_slash.play();
+				if(audio.openFromFile(audiofile))
+						audio.play();
 		}
 }

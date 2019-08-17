@@ -27,7 +27,13 @@ namespace Sagar
 		}
 		void Enemy::Draw()
 		{
-				_data->window.draw(enemyCharacter);
+				if(!die)
+				{
+						_data->window.draw(enemyCharacter);
+				}
 		}
-
+		void Enemy::Die()
+		{
+				die = true;
+		}
 }

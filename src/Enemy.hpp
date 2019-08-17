@@ -13,6 +13,7 @@ namespace Sagar
 						Enemy(GameDataRef data);
 						void Draw();
 						void Update(float dt);
+						void Die();
 						sf::Sprite getEnemySprite(){return this->enemyCharacter;}
 				private:
 						GameDataRef _data;
@@ -21,5 +22,6 @@ namespace Sagar
 						sf::Sprite enemyCharacter;
 						std::vector<sf::Texture> _running_enemy_frames;
 						std::vector<sf::Texture> current_animation;
+						bool die = false;
 		};
 }

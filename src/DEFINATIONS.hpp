@@ -106,5 +106,6 @@
 
 #define GAME_MUSIC "Resources/audio/mainMusic.wav"
 #define SWORD_SLASH "Resources/audio/sword_slash.wav"
+#define KUNAI_THROW "Resources/audio/kunaiThrow.wav"
 
 #define ATTACK_DURATION 1.0f
