@@ -22,6 +22,23 @@ namespace Sagar
 		}
 		void Enemy::Update(float dt)
 		{
+				float time = clock.restart().asSeconds();
+				velocity.x = 0;
+				velocity.x -=enemySpeed * dt;
+				totalTime +=time;
+				if(totalTime > 3)
+				{
+						turnRight = !turnRight;
+						totalTime = 0;
+						enemyCharacter.setScale(-enemyCharacter.getScale().x,enemyCharacter.getScale().y);
+				}
+
+				if(!turnRight)
+						enemyCharacter.move(velocity*dt);
+				else
+						enemyCharacter.move(-velocity*dt);
+
+
 				if(die){
 						enemyCharacter.setPosition(_data->window.getSize().x+1000,_data->window.getSize().y+1000);
 				}
