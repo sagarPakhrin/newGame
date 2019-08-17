@@ -87,6 +87,18 @@ namespace Sagar
 				_data->assets.LoadTexture("throw_frame_9", THROW_SPRITE_9);
 
 
+				_data->assets.LoadTexture("dead_frame_0", DEAD_SPRITE_0);
+				_data->assets.LoadTexture("dead_frame_1", DEAD_SPRITE_1);
+				_data->assets.LoadTexture("dead_frame_2", DEAD_SPRITE_2);
+				_data->assets.LoadTexture("dead_frame_3", DEAD_SPRITE_3);
+				_data->assets.LoadTexture("dead_frame_4", DEAD_SPRITE_4);
+				_data->assets.LoadTexture("dead_frame_5", DEAD_SPRITE_5);
+				_data->assets.LoadTexture("dead_frame_6", DEAD_SPRITE_6);
+				_data->assets.LoadTexture("dead_frame_7", DEAD_SPRITE_7);
+				_data->assets.LoadTexture("dead_frame_8", DEAD_SPRITE_8);
+				_data->assets.LoadTexture("dead_frame_9", DEAD_SPRITE_9);
+
+
 				_data->assets.LoadTexture("enemy_running_frame_0", ENEMY_RUNNING_TEXTURE_0);
 				_data->assets.LoadTexture("enemy_running_frame_1", ENEMY_RUNNING_TEXTURE_1);
 				_data->assets.LoadTexture("enemy_running_frame_2", ENEMY_RUNNING_TEXTURE_2);
@@ -183,7 +195,13 @@ namespace Sagar
 						}
 				}
 
+				sf::Sprite character_sprite = character->getCharacterSprite();;
+				sf::Sprite emenySprite = enemy->getEnemySprite();
 
+				if(MyCollisionDetector(character_sprite, emenySprite))
+				{
+						character->setCharacterState(DEAD_STATE);
+				}
 
 
 

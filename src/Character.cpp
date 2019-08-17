@@ -63,6 +63,17 @@ namespace Sagar
 				_slide_animation_frames.push_back(_data->assets.GetTexture("slide_frame_8"));
 				_slide_animation_frames.push_back(_data->assets.GetTexture("slide_frame_9"));
 
+				_dead_animation_frames.push_back(_data->assets.GetTexture("dead_frame_0"));
+				_dead_animation_frames.push_back(_data->assets.GetTexture("dead_frame_1"));
+				_dead_animation_frames.push_back(_data->assets.GetTexture("dead_frame_2"));
+				_dead_animation_frames.push_back(_data->assets.GetTexture("dead_frame_3"));
+				_dead_animation_frames.push_back(_data->assets.GetTexture("dead_frame_4"));
+				_dead_animation_frames.push_back(_data->assets.GetTexture("dead_frame_5"));
+				_dead_animation_frames.push_back(_data->assets.GetTexture("dead_frame_6"));
+				_dead_animation_frames.push_back(_data->assets.GetTexture("dead_frame_7"));
+				_dead_animation_frames.push_back(_data->assets.GetTexture("dead_frame_8"));
+				_dead_animation_frames.push_back(_data->assets.GetTexture("dead_frame_9"));
+
 				_throw_animation_frames.push_back(_data->assets.GetTexture("throw_frame_0"));
 				_throw_animation_frames.push_back(_data->assets.GetTexture("throw_frame_1"));
 				_throw_animation_frames.push_back(_data->assets.GetTexture("throw_frame_2"));
@@ -99,6 +110,21 @@ namespace Sagar
 				if(_character_state == IDLE_STATE)
 				{
 						current_animation = _idle_animation_frames;
+				}
+				else if(_character_state == DEAD_STATE)
+				{
+						playerHealth +=10;
+						current_animation = _dead_animation_frames;
+						character_sprite.setPosition(100,_data->window.getSize().y - (character_sprite.getTexture()->getSize().x * 0.3)/2 );
+						if(playerHealth<=0)
+						{
+								std::cout<<"GameOver";
+						}
+						else if(animation->getIterator()>=(int)current_animation.size()-2)
+						{
+								animation->resetIterator();
+								_character_state = IDLE_STATE;
+						}
 				}
 				else if(_character_state == THROW_STATE)
 				{

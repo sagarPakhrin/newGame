@@ -24,6 +24,7 @@
 #define JUMPING_STATE  4
 #define SLIDE_STATE  5
 #define THROW_STATE  6
+#define DEAD_STATE  7
 
 #define UP 0
 #define DOWN 1
@@ -83,6 +84,16 @@
 #define SLIDE_SPRITE_8 "Resources/images/ninjagirlnew/Slide__008.png"
 #define SLIDE_SPRITE_9 "Resources/images/ninjagirlnew/Slide__009.png"
 
+#define DEAD_SPRITE_0 "Resources/images/ninjagirlnew/Dead__000.png"
+#define DEAD_SPRITE_1 "Resources/images/ninjagirlnew/Dead__001.png"
+#define DEAD_SPRITE_2 "Resources/images/ninjagirlnew/Dead__002.png"
+#define DEAD_SPRITE_3 "Resources/images/ninjagirlnew/Dead__003.png"
+#define DEAD_SPRITE_4 "Resources/images/ninjagirlnew/Dead__004.png"
+#define DEAD_SPRITE_5 "Resources/images/ninjagirlnew/Dead__005.png"
+#define DEAD_SPRITE_6 "Resources/images/ninjagirlnew/Dead__006.png"
+#define DEAD_SPRITE_7 "Resources/images/ninjagirlnew/Dead__007.png"
+#define DEAD_SPRITE_8 "Resources/images/ninjagirlnew/Dead__008.png"
+#define DEAD_SPRITE_9 "Resources/images/ninjagirlnew/Dead__009.png"
 
 #define THROW_SPRITE_0 "Resources/images/ninjagirlnew/Throw__000.png"
 #define THROW_SPRITE_1 "Resources/images/ninjagirlnew/Throw__001.png"

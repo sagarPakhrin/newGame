@@ -23,6 +23,7 @@ namespace Sagar
 						void setDirection(const sf::Vector2f& dir);
 						void setCharacterState(int character_state){this->_character_state = character_state;}
 						int getCharacterState(int character_state){return (int)this->_character_state;}
+						sf::Sprite getCharacterSprite(){return character_sprite;}
 						sf::Vector2f GetPosition(){return this->character_sprite.getPosition();}
 						void playAudio(const std::string& audio);
 
@@ -37,6 +38,7 @@ namespace Sagar
 						GameDataRef _data;
 						sf::Sprite character_sprite;
 						Animation *animation;
+						float playerHealth = 100;
 
 
 						unsigned int _animationIterator;
@@ -48,6 +50,7 @@ namespace Sagar
 						std::vector<sf::Texture> _jump_animation_frames;
 						std::vector<sf::Texture> _slide_animation_frames;
 						std::vector<sf::Texture> _throw_animation_frames;
+						std::vector<sf::Texture> _dead_animation_frames;
 
 						std::vector<sf::Texture> current_animation;
 
