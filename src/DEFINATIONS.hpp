@@ -2,9 +2,9 @@
 
 #define SCREEN_WIDTH 1366
 #define SCREEN_HEIGHT 760
-#define SPLASH_STATE_SHOW_TIME 1.1
+#define SPLASH_STATE_SHOW_TIME 5.1
 
-#define SPLASH_SCENE_BACKGROUND_FILEPATH "Resources/res/GameLogo.png"
+#define SPLASH_SCENE_BACKGROUND_FILEPATH "Resources/images/sagar.png"
 #define PLAY_BUTTON_FILEPATH "Resources/images/playButton.png"
 #define MAIN_MENU_BACKGROUND_FILEPATH "Resources/images/mainMenu.jpg"
 
