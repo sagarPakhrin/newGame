@@ -15,7 +15,8 @@ namespace Sagar
 		{
 				_data->assets.LoadTexture("Splash State Background",SPLASH_SCENE_BACKGROUND_FILEPATH);
 				_background.setTexture(this->_data->assets.GetTexture("Splash State Background"));
-				_background.setPosition(sf::Vector2f(200.0f,120.0f));
+				_background.setOrigin(_background.getGlobalBounds().width/2.0f,_background.getGlobalBounds().height/2.0f);
+				_background.setPosition(_data->window.getSize().x/2,_data->window.getSize().y/2);
 		}
 
 		void SplashState::HandleInput()
@@ -41,7 +42,7 @@ namespace Sagar
 
 		void SplashState::Draw(float dt)
 		{
-				_data->window.clear(sf::Color(255,255,255));
+				_data->window.clear(sf::Color(0,0,0));
 				_data->window.draw(_background);
 				_data->window.display();
 		}
