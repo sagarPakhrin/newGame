@@ -176,7 +176,7 @@ namespace Sagar
 				{
 						sf::Sprite kunaiSprite = kunai.getKunaiSprite();
 						sf::Sprite enemySprite = enemy->getEnemySprite();
-						if(MyCollisionDetectoer(kunaiSprite,enemySprite))
+						if(MyCollisionDetector(kunaiSprite,enemySprite))
 						{
 								_kunais.erase(_kunais.begin());
 								enemy->Die();
@@ -210,7 +210,7 @@ namespace Sagar
 
 				_data->window.display();
 		}
-		bool GameState::MyCollisionDetectoer(sf::Sprite sprite1, sf::Sprite sprite2)
+		bool GameState::MyCollisionDetector(sf::Sprite sprite1, sf::Sprite sprite2)
 		{
 				sf::Rect<float> rect1 = sprite1.getGlobalBounds();
 				sf::Rect<float> rect2 = sprite2.getGlobalBounds();
