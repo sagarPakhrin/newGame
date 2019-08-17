@@ -22,15 +22,15 @@ namespace Sagar
 		}
 		void Enemy::Update(float dt)
 		{
+				if(die){
+						enemyCharacter.setPosition(_data->window.getSize().x+1000,_data->window.getSize().y+1000);
+				}
 				current_animation = _running_enemy_frames;
 				animation->Update(enemyCharacter,current_animation,false,dt);
 		}
 		void Enemy::Draw()
 		{
-				if(!die)
-				{
-						_data->window.draw(enemyCharacter);
-				}
+				_data->window.draw(enemyCharacter);
 		}
 		void Enemy::Die()
 		{

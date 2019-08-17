@@ -178,7 +178,7 @@ namespace Sagar
 						sf::Sprite enemySprite = enemy->getEnemySprite();
 						if(MyCollisionDetectoer(kunaiSprite,enemySprite))
 						{
-								_kunais.pop_back();
+								_kunais.erase(_kunais.begin());
 								enemy->Die();
 						}
 				}
